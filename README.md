@@ -19,13 +19,16 @@
         1. [node-start-with-watcher](package.json#L11) - starts node monitor, then starts a wathcer to detect changes in [dist](dist) folder and re-starts node monitor every time a change is detected
         1. [run-server](package.json#L12) - runs [babel-clean](package.json#L8), then [babel-build](package.json#L9), then [node-start-with-watcher](package.json#L11) and [babel-build-with-watcher](package.json#L10)
     1. Dependencies
-        1. [babel-cli](package.json#L17) - for generating es6 specific code
-        1. [babel-preset-env](package.json#L18) - for generating es6 specific code
-        1. [babel-preset-es2015](package.json#L19) - for generating es6 specific code
-        1. [babel-register](package.json#L20) - for generating es6 specific code. This can be used for development and debugging purposes.
-        1. [express](package.json#L21) - node web framework for developing the backend
-        1. [node](package.json#L22) - node core
-        1. [nodemon](package.json#L23) - for detecting changes in [dist](dist) folder and auto-restarting server
+        1. [babel-cli](package.json#L17) - for generating es5 specific code
+        1. [babel-preset-env](package.json#L18) - for generating es5 specific code
+        1. [babel-preset-es2015](package.json#L19) - for generating es5 specific code from es6
+        1. [babel-preset-react](package.json#L20) - for generating es5 specific code from jsx
+        1. [babel-register](package.json#L21) - for generating es6 specific code. This can be used for development and debugging purposes
+        1. [express](package.json#L22) - node web framework for developing the backend
+        1. [node](package.json#L23) - node core
+        1. [nodemon](package.json#L24) - for detecting changes in [dist](dist) folder and auto-restarting server
+        1. [react](package.json#L25) - react core
+        1. [react-dom](package.json#L26) - react dom for rendering jsx
 1. [README.md](README.md) - this file, contains necessary documentations.
 1. [.gitignore](.gitignore) - the git ignore file
 1. [.babelrc](.babelrc) - the babel configuration file, for configuring es6 generation configuration
