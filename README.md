@@ -22,7 +22,7 @@
         1. [babel-build](package.json#L9) - generates ES6 target code of [src](src) folder in [dist](dist) folder
         1. [babel-build-with-watcher](package.json#L10) - generates ES6 target code of [src](src) folder in [dist](dist) folder, then starts a watcher to detect changes in [src](src) folder and re-generate every time a change is detected
         1. [node-start-with-watcher](package.json#L11) - starts node monitor, then starts a wathcer to detect changes in [dist](dist) folder and re-starts node monitor every time a change is detected
-        1. [run-server](package.json#L12) - runs [babel-clean](package.json#L8), then [babel-build](package.json#L9), then [node-start-with-watcher](package.json#L11) and [babel-build-with-watcher](package.json#L10)
+        1. [start-server](package.json#L12) - runs [babel-clean](package.json#L8), then [babel-build](package.json#L9), then [node-start-with-watcher](package.json#L11) and [babel-build-with-watcher](package.json#L10)
     1. Dependencies
         1. [babel-cli](package.json#L17) - for generating es5 specific code
         1. [babel-preset-env](package.json#L18) - for generating es5 specific code

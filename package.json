@@ -9,7 +9,7 @@
     "babel-build": "babel src -s -d dist",
     "babel-build-with-watcher": "babel src --watch -s -d dist",
     "node-start-with-watcher": "nodemon --watch dist dist/main/server",
-    "run-server": "npm run babel-clean && npm run babel-build && npm run node-start-with-watcher & npm run babel-build-with-watcher"
+    "start-server": "npm run babel-clean && npm run babel-build && npm run node-start-with-watcher & npm run babel-build-with-watcher"
   },
   "author": "",
   "license": "ISC",
