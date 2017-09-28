@@ -1,14 +1,11 @@
 "use strict";
 
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';   
+import ReactDOMServer from 'react-dom/server';
+import Container from './../components/container'
 
 export default function setRoutes(app) {
-    app.get("/", function(req, res){
-        const header = <div>
-            <h1>Hello world, How are you?</h1>
-        </div>;
-
-        res.send(ReactDOMServer.renderToString(header));
+    app.get("/", function(req, res) {
+        res.send(ReactDOMServer.renderToString(<Container />));
     });
 }

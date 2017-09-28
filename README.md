@@ -34,6 +34,8 @@
 1. [README.md](README.md) - this file, contains necessary documentations
 1. [src](src) - the folder that contains the development code. Edit files in this folder for development purpose
     1. [main](src/main) - the dev code
+        1. [components](src/main/components) - the compnents used for the front end
+            1. [Container](src/main/components/container.js) - container component
         1. [server](src/main/server) - the server code
             1. [index](src/main/server/index.js) - the code that is run by nodemon for starting the server
             1. [routes](src/main/server/routes.js) - HTTP routing code
