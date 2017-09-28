@@ -8,6 +8,8 @@ export default class Container extends Component {
     }
 
     render() {
-        return <div>Hello world</div>
+        return <div className='container'>
+            {this.props.children}
+        </div>
     }
 }

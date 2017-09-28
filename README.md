@@ -35,8 +35,13 @@
 1. [src](src) - the folder that contains the development code. Edit files in this folder for development purpose
     1. [main](src/main) - the dev code
         1. [components](src/main/components) - the compnents used for the front end
+            1. [Body](src/main/components/body.js) - Html body component
             1. [Container](src/main/components/container.js) - container component
+            1. [Head](src/main/components/head.js) - Html head component
+            1. [Html](src/main/components/html.js) - Html component
         1. [server](src/main/server) - the server code
             1. [index](src/main/server/index.js) - the code that is run by nodemon for starting the server
             1. [routes](src/main/server/routes.js) - HTTP routing code
+        1. [views](src/main/views) - the view codes
+            1. [index](src/main/views/index.js) - view of the landing page
     1. [test](src/test) - the test code
