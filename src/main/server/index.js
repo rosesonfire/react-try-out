@@ -2,12 +2,18 @@
 
 import express from 'express';
 import setRoutes from './routes';
+import path from 'path'
 
 const app = express();
 
 app.set('port', 8080);
 
-app.use(express.static('public/style'));
+// === Middlewares ===
+
+app.use(express.static('public'));
+// app.use(express.static('bower_components'));
+
+// ===
 
 setRoutes(app);
 
