@@ -17,4 +17,6 @@ app.use(express.static('public'));
 
 setRoutes(app);
 
-app.listen(app.get('port'));
+app.listen(app.get('port'), function(){
+    console.log("server started at port 8080");
+});
