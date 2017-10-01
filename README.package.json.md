@@ -9,6 +9,7 @@
 1. start-server - runs babel-clean, then babel-build, then start-watchers
 # Dependencies
 1. babel-cli - for transpiling es6 code
+1. babel-loader - for transpiling jsx and es6 in webpack
 1. babel-preset-env - for transpiling es6 code
 1. babel-preset-es2015 - for transpiling es6 code
 1. babel-preset-react - for transpiling jsx
@@ -16,6 +17,7 @@
 1. css-loader - css loader for webpack
 1. express - node web framework for developing the backend
 1. extract-text-webpack-plugin - plugin for webpack to create separate bundled css file
+1. html-webpack-exclude-assets-plugin - plugin for webpack to exclude static files from being injected into html file
 1. html-webpack-plugin - for injecting webpack bundles into html file
 1. node - node core
 1. nodemon - for detecting changes in dist folder and auto-restarting server

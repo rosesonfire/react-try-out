@@ -1,3 +1,5 @@
+"use strict";
+
 // entry point for webpack
 // import other scripts into this file
 // do not add custom scripts into this file

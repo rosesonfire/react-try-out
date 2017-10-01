@@ -12,6 +12,7 @@
 1. [.babelrc](.babelrc) - the babel configuration file, for configuring es6 traspilation configuration
 1. [customization](customization) - folder for storing custom css, js and images
     1. [img](customization/img) - folder for storing custom img
+    1. [index.html](customization/index.html) - landing template for react application
     1. [style](customization/style) - folder for storing custom css
     1. [scripts](customization/scripts) - folder for storing custom js
 1. [package.json](package.json) - npm package configuration. Contains list of dependencies and scripts. A [README](README.package.json.md) is available for it.
@@ -21,6 +22,7 @@
 1. [src](src) - the folder that contains the development code. Edit files in this folder for development purpose
     1. [main](src/main) - the dev code
         1. [back-end](src/main/back-end) - contains the back end code
+            1. [routes](src/main/back-end/routes.js) - HTTP routing code
         1. [front-end](src/main/back-end) - contains the front end code
             1. [components](src/main/front-end/components) - the compnents used for the front end
                 1. [Body](src/main/front-end/components/body.js) - Html body component
@@ -31,7 +33,6 @@
                 1. [index](src/main/front-end/views/index.js) - view of the landing page
         1. [server](src/main/server) - the server code
             1. [index](src/main/server/index.js) - the code that is run by nodemon for starting the server
-            1. [routes](src/main/server/routes.js) - HTTP routing code
     1. [test](src/test) - the test code
 1. [webpack.config.js](webpack.config.js) - contains the webpack configurations
 ## Generated folders and files
@@ -39,5 +40,6 @@
 1. [node_modules](node_modules) - the folder in which the node modules are installed
 1. [package-lock.json](package-lock.json) - the compiled npm package configuration file
 1. [public](public) - folder for storing static public files
+    1. [index.html](public/index.html) - landing page with injected webpack module links
     1. [scripts.min.js](public/scripts.min.js) - bundled customized javascript
     1. [styles.min.js](public/styles.min.js) - bundled customized css

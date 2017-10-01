@@ -1,7 +1,7 @@
 "use strict";
 
 import express from 'express';
-import setRoutes from './routes';
+import setRoutes from './../back-end/routes';
 import path from 'path'
 
 const app = express();
