@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const WebpackOnBuildPlugin = require('on-build-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { exec } = require('child_process');
 
 module.exports = {
@@ -29,10 +30,13 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin(),
-        new webpack.HashedModuleIdsPlugin(),
         new ExtractTextPlugin("[name].min.css"),
+        new HtmlWebpackPlugin({
+            title: 'Personal Assistant',
+            template: 'customization/index.html'
+        }),
         new WebpackOnBuildPlugin(function(stats) {
             exec("npm run webpack-remove-extra-js")
-        })
+        }),
     ]
 };

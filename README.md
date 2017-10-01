@@ -14,7 +14,7 @@
     1. [img](customization/img) - folder for storing custom img
     1. [style](customization/style) - folder for storing custom css
     1. [scripts](customization/scripts) - folder for storing custom js
-1. [package.json](package.json) - npm package configuration. Contains list of dependencies and scripts
+1. [package.json](package.json) - npm package configuration. Contains list of dependencies and scripts. A [README](README.package.json.md) is available for it.
 1. [public](public) - folder for storing static public files
     1. [index.html](public/index.html) - landing page
 1. [README.md](README.md) - this file, contains necessary documentations
