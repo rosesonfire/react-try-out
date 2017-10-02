@@ -19,9 +19,12 @@
 1. extract-text-webpack-plugin - plugin for webpack to create separate bundled css file
 1. html-webpack-exclude-assets-plugin - plugin for webpack to exclude static files from being injected into html file
 1. html-webpack-plugin - for injecting webpack bundles into html file
+1. jquery - for bootstrap
 1. node - node core
 1. nodemon - for detecting changes in dist folder and auto-restarting server
 1. on-build-webpack - to run scripts after every webpack build
+1. popper.js - for bootstrap
 1. react - react core
 1. react-dom - for rendering react components into HTML
+1. react-router-dom - for client side routing
 1. webpack - bundle static files and react files

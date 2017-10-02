@@ -24,13 +24,10 @@
         1. [back-end](src/main/back-end) - contains the back end code
             1. [routes](src/main/back-end/routes.js) - HTTP routing code
         1. [front-end](src/main/back-end) - contains the front end code
-            1. [components](src/main/front-end/components) - the compnents used for the front end
-                1. [Body](src/main/front-end/components/body.js) - Html body component
-                1. [Container](src/main/front-end/components/container.js) - container component
-                1. [Head](src/main/front-end/components/head.js) - Html head component
-                1. [Html](src/main/front-end/components/html.js) - Html component
-            1. [views](src/main/front-end/views) - the view codes
-                1. [index](src/main/front-end/views/index.js) - view of the landing page
+            1. [App](src/main/front-end/app.js) - react entry point
+            1. [interfaces](src/main/front-end/interfaces) - library code for front-end
+                1. [Page](src/main/front-end/interfaces/page.js) - interface for the client side routed pages
+            1. [pages](src/main/front-end/pages) - contains the client side routed pages
         1. [server](src/main/server) - the server code
             1. [index](src/main/server/index.js) - the code that is run by nodemon for starting the server
     1. [test](src/test) - the test code
@@ -40,6 +37,7 @@
 1. [node_modules](node_modules) - the folder in which the node modules are installed
 1. [package-lock.json](package-lock.json) - the compiled npm package configuration file
 1. [public](public) - folder for storing static public files
+    1. [app.min.js](public/styles.min.js) - bundled customized css
     1. [index.html](public/index.html) - landing page with injected webpack module links
     1. [scripts.min.js](public/scripts.min.js) - bundled customized javascript
     1. [styles.min.js](public/styles.min.js) - bundled customized css

@@ -11,7 +11,7 @@ module.exports = {
     entry: {
         script: "./customization/scripts/script.js",
         style: "./customization/style/style.css",
-        app: "./dist/main/front-end/views/app.js"
+        app: "./dist/main/front-end/app.js"
     },
     output: {
         path: __dirname + "/public",
@@ -55,6 +55,6 @@ module.exports = {
         new HtmlWebpackExcludeAssetsPlugin(),
         new WebpackOnBuildPlugin(function(stats) {
             exec("npm run webpack-remove-extra-js")
-        }),
+        })
     ]
 };
