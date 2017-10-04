@@ -8,18 +8,21 @@ import Home from './pages/home';
 import { BrowserRouter, Link, Route } from 'react-router-dom'
 
 export default class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+    }
+
+    getPages() {
+        return [
+            Home,
+            YearlyEvents,
+            MeetingEvents
+        ]
     }
 
     render() {
 
-        const pages = [
-            Home,
-            YearlyEvents,
-            MeetingEvents
-        ];
-
+        const pages = this.getPages();
         return (
             <BrowserRouter>
                 <div>

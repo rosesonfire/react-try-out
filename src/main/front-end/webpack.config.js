@@ -1,20 +1,25 @@
 "use strict";
 
-const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const WebpackOnBuildPlugin = require('on-build-webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
-const { exec } = require('child_process');
+import webpack from 'webpack';
+import ExtractTextPlugin from "extract-text-webpack-plugin";
+import WebpackOnBuildPlugin from 'on-build-webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackExcludeAssetsPlugin from 'html-webpack-exclude-assets-plugin';
+import { exec } from 'child_process';
+
+const scripts = "./scripts/script.js";
+const styles = "./styles/style.css";
+const app = "./app.js";
+const outputPath = __dirname + "/public";
 
 module.exports = {
     entry: {
-        script: "./customization/scripts/script.js",
-        style: "./customization/style/style.css",
-        app: "./dist/main/front-end/app.js"
+        scripts: scripts,
+        styles: styles,
+        app: app
     },
     output: {
-        path: __dirname + "/public",
+        path: outputPath,
         filename: "[name].min.js"
     },
     module: {
@@ -49,12 +54,16 @@ module.exports = {
         new ExtractTextPlugin("[name].min.css"),
         new HtmlWebpackPlugin({
             hash: true,
-            template: 'customization/index.html',
-            excludeAssets: [/style.*js/]
+            template: "./index.html",
+            excludeAssets: [/styles.*js/]
         }),
         new HtmlWebpackExcludeAssetsPlugin(),
         new WebpackOnBuildPlugin(function(stats) {
-            exec("npm run webpack-remove-extra-js")
+            exec("rm -rf " + outputPath + "/styles.min.js")
         })
-    ]
+    ],
+    devServer: {
+        compress: true,
+        port: 8090
+      }
 };
