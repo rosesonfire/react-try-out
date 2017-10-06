@@ -19,6 +19,8 @@
             1. [server](src/main/server) - the code that is run by nodemon for starting the back end server
         1. [front-end](src/main/back-end) - contains the front end code
             1. [App](src/main/front-end/app.js) - react entry point
+            1. [factories](src/main/front-end/factories) - folder for storing factories
+                1. [PageFactory](src/main/front-end/factories/PageFactory) - factory for Pages
             1. [img](src/main/front-end/img) - folder for storing custom images
             1. [index.html](src/main/front-end/index.html) - landing template for react application
             1. [interfaces](src/main/front-end/interfaces) - library code for front-end
