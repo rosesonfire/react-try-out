@@ -5,6 +5,10 @@ import Page from './../interfaces/page';
 
 export default class MeetingEvents extends Page {
     
+    static get id() {
+        return "page_meeting_events";
+    }
+    
     static get title() {
         return "Meeting events";
     }

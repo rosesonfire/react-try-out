@@ -5,6 +5,10 @@ import Page from './../interfaces/page';
 
 export default class Home extends Page {
     
+    static get id() {
+        return "page_home";
+    }
+    
     static get title() {
         return "Home View";
     }

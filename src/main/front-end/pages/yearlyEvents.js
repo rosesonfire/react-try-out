@@ -6,6 +6,10 @@ import InfiniteCalendar from 'react-infinite-calendar';
 
 export default class YearlyEvents extends Page {
     
+    static get id() {
+        return "page_yearly_events";
+    }
+    
     static get title() {
         return "Yearly Events";
     }

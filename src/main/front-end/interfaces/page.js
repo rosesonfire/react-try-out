@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 
 export default class Page extends Component
 {
+    static get id() {
+        return "page_default";
+    }
+    
     static get title() {
-        return "NO title";
+        return "No title";
     }
 
     static get color() {
