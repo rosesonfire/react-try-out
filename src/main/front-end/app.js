@@ -34,7 +34,7 @@ export default class App extends Component {
 
         const setPages = this.setPages.bind(this);
         
-        fetch("http://localhost:8080/service/permissions/pages")
+        fetch("http://localhost:8090/service/permissions/pages")
             .then(response => {
                 
                 return response.json();

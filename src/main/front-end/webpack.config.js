@@ -64,6 +64,10 @@ module.exports = {
     ],
     devServer: {
         port: 8090,
-        inline: true
+        inline: true,
+        open: true,
+        proxy: {
+            "*" : "http://localhost:8080"
+        }
     }
 };
