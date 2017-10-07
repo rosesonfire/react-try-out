@@ -2,7 +2,7 @@
 ## Trello
 [https://trello.com/b/5ugkxmBt/react-test](https://trello.com/b/5ugkxmBt/react-test)
 ## To start server
-`npm run start-server`
+`npm run start`
 ## Notes
 - Server will automatically reload on changes
 - Code inside [dist](dist) are auto-generated, **DO NOT** make any change any code in it.
