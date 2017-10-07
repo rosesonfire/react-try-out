@@ -8,7 +8,7 @@ import HtmlWebpackExcludeAssetsPlugin from 'html-webpack-exclude-assets-plugin';
 import { exec } from 'child_process';
 
 const scripts = "./scripts/script.js";
-const styles = "./styles/style.css";
+const styles = "./styles/style.scss";
 const app = "./app.js";
 const outputPath = __dirname + "/public";
 
@@ -25,10 +25,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: ExtractTextPlugin.extract([
                     {
                         loader: 'css-loader',
+                        options: {
+                            minimize: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
                         options: {
                             minimize: true
                         }
