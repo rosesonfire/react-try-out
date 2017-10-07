@@ -2,11 +2,11 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Link, Route } from 'react-router-dom';
+import fetch from 'node-fetch';
 import YearlyEvents from './pages/yearlyEvents';
 import MeetingEvents from './pages/meetingEvents';
 import Home from './pages/home';
-import { BrowserRouter, Link, Route } from 'react-router-dom'
-import fetch from 'node-fetch';
 import PageFactory from './factories/pageFactory';
 
 export default class App extends Component {
@@ -18,7 +18,7 @@ export default class App extends Component {
         }
 
         this.pageFactory = new PageFactory();
-        this.fetchPages();
+        this.fetchPages(this.pageFactory, this.setPages.bind(this));
 
     }
 
@@ -30,31 +30,22 @@ export default class App extends Component {
 
     }
 
-    fetchPages() {
-
-        const setPages = this.setPages.bind(this);
+    async fetchPages(pageFactory, setPages) {
         
-        fetch("http://localhost:8090/service/permissions/pages")
-            .then(response => {
-                
-                return response.json();
+        const response = await fetch("http://localhost:8090/service/permissions/pages");
+        const responseIds = await response.json();
+        const responsePages = responseIds.map(id => {
+            return pageFactory.getPage(id);
+        });
+        
+        setPages(responsePages);
 
-            })
-            .then(responseIds => {
-                
-                const responsePages = responseIds.map(id => {
-                    return this.pageFactory.getPage(id);
-                });
-
-                setPages(responsePages);
-
-            });
     }
 
     render() {
 
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <div>
                     <div>
                         <ul className="nav nav-tabs">
@@ -75,7 +66,7 @@ export default class App extends Component {
                         })
                     }
                 </div>
-            </BrowserRouter>);
+            </HashRouter>);
 
     }
 }

@@ -25,32 +25,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['es2015', 'react']
-                        }
-                    }
-                ]
-            },
-            {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract([
                     {
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true
-                        }
+                        loader: 'css-loader'
                     }
                 ])
             }
         ]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
+        // new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin("[name].min.css"),
         new HtmlWebpackPlugin({
             hash: true,
