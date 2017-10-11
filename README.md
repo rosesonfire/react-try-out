@@ -16,7 +16,7 @@
     1. [main](src/main) - the dev code
         1. [back-end](src/main/back-end) - contains the back end code
             1. [app](src/main/back-end/app) - contains the mvc application
-                1. [conrollers](src/main/back-end/app/conrollers) - contains the mvc conrollers
+                1. [controllers](src/main/back-end/app/controllers) - contains the mvc conrollers
                 1. [models](src/main/back-end/app/models) - contains the mvc models
             1. [config](src/main/back-end/config) - contains different app configurations
             1. [index.js](src/main/back-end/index.js) - the code that is run by nodemon for starting the back end server
