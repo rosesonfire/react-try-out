@@ -1,10 +1,10 @@
 "use strict";
 
-import React from 'react';
-import Page from './../interfaces/page';
+import React, { Component } from "react";
 import InfiniteCalendar from 'react-infinite-calendar';
 
-export default class YearlyEvents extends Page {
+
+export default class YearlyEvents extends Component {
     
     static get id() {
         return "page_yearly_events";

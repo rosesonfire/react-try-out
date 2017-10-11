@@ -1,9 +1,8 @@
 "use strict";
 
-import React from 'react';
-import Page from './../interfaces/page';
+import React, { Component } from "react";
 
-export default class Home extends Page {
+export default class Home extends Component {
     
     static get id() {
         return "page_home";

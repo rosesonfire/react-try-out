@@ -15,17 +15,24 @@
 1. [src](src) - the folder that contains the development code. Edit files in this folder for development purpose
     1. [main](src/main) - the dev code
         1. [back-end](src/main/back-end) - contains the back end code
-            1. [routes](src/main/back-end/routes.js) - HTTP routing code
-            1. [server](src/main/server) - the code that is run by nodemon for starting the back end server
-        1. [front-end](src/main/back-end) - contains the front end code
-            1. [App](src/main/front-end/app.js) - react entry point
-            1. [factories](src/main/front-end/factories) - folder for storing factories
-                1. [PageFactory](src/main/front-end/factories/PageFactory) - factory for Pages
+            1. [app](src/main/back-end/app) - contains the mvc application
+                1. [conrollers](src/main/back-end/app/conrollers) - contains the mvc conrollers
+                1. [models](src/main/back-end/app/models) - contains the mvc models
+            1. [config](src/main/back-end/config) - contains different app configurations
+            1. [index.js](src/main/back-end/index.js) - the code that is run by nodemon for starting the back end server
+            1. [ioc](src/main/back-end/ioc) - contains inversion of control configurations
+            1. [routes.js](src/main/back-end/routes.js) - HTTP routing code
+        1. [front-end](src/main/front-end) - contains the front end code
+            1. [app](src/main/front-end/app) - contains the react application
+                1. [components](src/main/front-end/app/components] - contains the react components
+                    1. [App](src/main/front-end/app/components/app.js) - react entry component
+                    1. [pages](src/main/front-end/app/components/pages) - contains the client side routed pages
+                1. [template.html](src/main/front-end/app/template.html) - landing template for react application
             1. [img](src/main/front-end/img) - folder for storing custom images
-            1. [index.html](src/main/front-end/index.html) - landing template for react application
+            1. [index.js](src/main/front-end/index.js) - the code that is run by webpack dev server for starting the front end server
             1. [interfaces](src/main/front-end/interfaces) - library code for front-end
                 1. [Page](src/main/front-end/interfaces/page.js) - interface for the client side routed pages
-            1. [pages](src/main/front-end/pages) - contains the client side routed pages
+            1. [ioc](src/main/back-end/ioc) - contains dependency factories (needs to be improved)
             1. [scripts](src/main/front-end/scripts) - folder for storing custom js
             1. [styles](src/main/front-end/styles) - folder for storing custom css
             1. [webpack.config.js](src/main/front-end/webpack.config.js) - contains the webpack configurations

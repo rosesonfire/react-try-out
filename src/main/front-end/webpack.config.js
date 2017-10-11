@@ -1,15 +1,15 @@
 "use strict";
 
-import webpack from 'webpack';
+import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
-import WebpackOnBuildPlugin from 'on-build-webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import HtmlWebpackExcludeAssetsPlugin from 'html-webpack-exclude-assets-plugin';
-import { exec } from 'child_process';
+import WebpackOnBuildPlugin from "on-build-webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import HtmlWebpackExcludeAssetsPlugin from "html-webpack-exclude-assets-plugin";
+import { exec } from "child_process";
 
 const scripts = "./scripts/script.js";
 const styles = "./styles/style.scss";
-const app = "./app.js";
+const app = "./index.js";
 const outputPath = __dirname + "/public";
 
 module.exports = {
@@ -28,16 +28,13 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract([
                     {
-                        loader: 'css-loader',
+                        loader: "css-loader",
                         options: {
                             minimize: true
                         }
                     },
                     {
-                        loader: 'sass-loader',
-                        options: {
-                            minimize: true
-                        }
+                        loader: "sass-loader"
                     }
                 ])
             }
@@ -48,7 +45,7 @@ module.exports = {
         new ExtractTextPlugin("[name].min.css"),
         new HtmlWebpackPlugin({
             hash: true,
-            template: "./index.html",
+            template: "./app/template.html",
             excludeAssets: [/styles.*js/]
         }),
         new HtmlWebpackExcludeAssetsPlugin(),
