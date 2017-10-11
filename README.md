@@ -24,14 +24,12 @@
             1. [routes.js](src/main/back-end/routes.js) - HTTP routing code
         1. [front-end](src/main/front-end) - contains the front end code
             1. [app](src/main/front-end/app) - contains the react application
-                1. [components](src/main/front-end/app/components] - contains the react components
+                1. [components](src/main/front-end/app/components) - contains the react components
                     1. [App](src/main/front-end/app/components/app.js) - react entry component
                     1. [pages](src/main/front-end/app/components/pages) - contains the client side routed pages
                 1. [template.html](src/main/front-end/app/template.html) - landing template for react application
             1. [img](src/main/front-end/img) - folder for storing custom images
             1. [index.js](src/main/front-end/index.js) - the code that is run by webpack dev server for starting the front end server
-            1. [interfaces](src/main/front-end/interfaces) - library code for front-end
-                1. [Page](src/main/front-end/interfaces/page.js) - interface for the client side routed pages
             1. [ioc](src/main/back-end/ioc) - contains dependency factories (needs to be improved)
             1. [scripts](src/main/front-end/scripts) - folder for storing custom js
             1. [styles](src/main/front-end/styles) - folder for storing custom css
