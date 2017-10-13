@@ -20,6 +20,7 @@
 1. **extract-text-webpack-plugin** - plugin for webpack to create separate bundled css file
 1. **html-webpack-exclude-assets-plugin** - plugin for webpack to exclude static files from being injected into html file
 1. **html-webpack-plugin** - for injecting webpack bundles into html file
+1. **mongodb** - for accessing mongoDB
 1. **node** - node core
 1. **node-sass** - for compile sass files
 1. **nodemon** - for detecting changes in dist folder and auto-restarting server

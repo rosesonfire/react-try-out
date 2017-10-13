@@ -1,13 +1,17 @@
 "use strict";
 
 import express from "express";
+import expressWrapper from './../lib/expressWrapper';
 
 function getApp(host, port) {
 
-  const app = express();
-  
-  app.set("host", host);
-  app.set("port", port);
+  const _app = express();
+
+  const app = expressWrapper(
+    _app,
+    host,
+    port
+  );
 
   return app;
 

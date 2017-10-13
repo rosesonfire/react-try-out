@@ -7,11 +7,12 @@ const configOptions = {
   "production": devFile,
   "development": prodFile
 };
-const env = process.env.NODE_ENV || "development";
+const env = process.env.NODE_ENV;
 
-console.log(`Setting up environment in ${env} mode...`.green);
+const confFile = configOptions[env] || devFile;
 
-const confFile = configOptions[env];
+console.log(`Setting up environment with configuration file: ${confFile}...`.green);
+
 const config = require(`./../config/${confFile}`);
 
 exports = module.exports = function() {

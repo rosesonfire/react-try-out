@@ -10,7 +10,8 @@ module.exports = {
     db: {
         connection: {
             host: "localhost",
-            port: 9000
+            port: 27017,
+            dbName: "pa-db"
         }
     }
 }

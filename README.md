@@ -21,6 +21,7 @@
             1. [config](src/main/back-end/config) - contains different app configurations
             1. [index.js](src/main/back-end/index.js) - the code that is run by nodemon for starting the back end server
             1. [ioc](src/main/back-end/ioc) - contains inversion of control configurations
+            1. [lib](src/main/back-end/lib) - contains customized libraries
             1. [routes.js](src/main/back-end/routes.js) - HTTP routing code
         1. [front-end](src/main/front-end) - contains the front end code
             1. [app](src/main/front-end/app) - contains the react application
@@ -30,7 +31,7 @@
                 1. [template.html](src/main/front-end/app/template.html) - landing template for react application
             1. [img](src/main/front-end/img) - folder for storing custom images
             1. [index.js](src/main/front-end/index.js) - the code that is run by webpack dev server for starting the front end server
-            1. [ioc](src/main/back-end/ioc) - contains dependency factories (needs to be improved)
+            1. [registry](src/main/front-end/registry) - contain registered stuff (needs to be improved)
             1. [scripts](src/main/front-end/scripts) - folder for storing custom js
             1. [styles](src/main/front-end/styles) - folder for storing custom css
             1. [webpack.config.js](src/main/front-end/webpack.config.js) - contains the webpack configurations

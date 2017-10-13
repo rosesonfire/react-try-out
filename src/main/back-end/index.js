@@ -17,19 +17,10 @@ colors.setTheme({
  // ========== Initialize mvc application ==========
 
 const app = IoC.create("app");
+const db = IoC.create("db");
 
-setRoutes(app);
+setRoutes(app, db);
 
-const host = app.get("host");
-const port = app.get("port");
-
-app.listen(
-    port,
-    host,
-    function() {
-        console.log("Starting server ...");
-    },
-    function() {
-        console.log(`Started server at (${host}, ${port}) ...`);
-    }
-);
+app.then(_app => {
+    _app.listen2(function(){}, function(){});
+});
