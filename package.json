@@ -6,10 +6,9 @@
   "config": {
     "src_dir": "./src",
     "prod_dir": "./dist",
-    "back-end_dir": "./dist/main/back-end",
-    "back_end_server": "./dist/main/back-end",
-    "front_end_dir": "./dist/main/front-end",
-    "webpack_config": "./dist/main/front-end/webpack.config.js"
+    "back_end_dir": "./dist/main/backEnd",
+    "front_end_dir": "./dist/main/frontEnd",
+    "webpack_config": "./dist/main/frontEnd/webpack.config.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,9 +16,9 @@
     "build": "babel $npm_package_config_src_dir -d $npm_package_config_prod_dir --copy-files",
     "clean-build": "npm run clean && npm run build",
     "build-with-watch": "babel $npm_package_config_src_dir --watch -d $npm_package_config_prod_dir --copy-files",
-    "start-back-end-server": "nodemon --watch $npm_package_config_back_end_dir $npm_package_config_back_end_server",
-    "start-front-end-server": "webpack-dev-server --watch --config $npm_package_config_webpack_config --context $npm_package_config_front_end_dir",
-    "start-servers-and-watchers": "npm run start-back-end-server & npm run start-front-end-server & npm run build-with-watch",
+    "start-back-end": "nodemon --watch $npm_package_config_back_end_dir $npm_package_config_back_end_dir",
+    "start-front-end": "webpack-dev-server --watch --config $npm_package_config_webpack_config --context $npm_package_config_front_end_dir",
+    "start-servers-and-watchers": "npm run start-back-end & npm run start-front-end & npm run build-with-watch",
     "start": "npm run clean-build && npm run start-servers-and-watchers"
   },
   "author": "Ishtiaque Khan",
