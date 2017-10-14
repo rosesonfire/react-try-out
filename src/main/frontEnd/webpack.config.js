@@ -6,6 +6,7 @@ import WebpackOnBuildPlugin from "on-build-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackExcludeAssetsPlugin from "html-webpack-exclude-assets-plugin";
 import { exec } from "child_process";
+import { backEndConfig } from "./../config";
 
 const scripts = "./scripts/script.js";
 const styles = "./styles/style.scss";
@@ -58,7 +59,7 @@ module.exports = {
         inline: true,
         open: true,
         proxy: {
-            "*" : "http://localhost:8080"
+            "*" : `http://${backEndConfig.host}:${backEndConfig.port}`
         }
     }
 };

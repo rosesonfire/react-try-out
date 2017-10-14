@@ -1,8 +1,6 @@
 "use strict";
 
-import config from "./../config";
-
-const dbConfig = config.db.connection;
+import { dbConfig } from "./../config";
 
 module.exports = {
     dbConnectionUri: `mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.dbName}/migrations`,

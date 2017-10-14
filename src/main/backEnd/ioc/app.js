@@ -2,6 +2,7 @@
 
 import express from "express";
 import expressWrapper from './../lib/expressWrapper';
+import { backEndConfig } from "./../../config";
 
 function getApp(host, port) {
 
@@ -17,14 +18,12 @@ function getApp(host, port) {
 
 }
 
-exports = module.exports = function(config) {
+exports = module.exports = function() {
 
-  const serverConfig = config.backEnd.server;
-  const app = getApp(serverConfig.host, serverConfig.port);
+  const app = getApp(backEndConfig.host, backEndConfig.port);
 
   return app;
   
 }
    
-exports["@require"] = [ "config" ];
 exports["@singleton"] = true;

@@ -10,4 +10,6 @@ const env = process.env.NODE_ENV;
 const confFile = configOptions[env] || devFile;
 const config = require(`./${confFile}`);
 
-export default config;
+export const dbConfig = config.db;
+export const backEndConfig = config.backEnd;
+export const frontEndConfig = config.frontEnd;

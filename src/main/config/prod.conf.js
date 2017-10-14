@@ -1,19 +1,17 @@
 "use strict";
 
 module.exports = {
-    backEnd: {
-        app: {
-            server: {
-                host: "localhost",
-                port: 8080
-            }
-        }
-    },
     db: {
-        connection: {
-            host: "localhost",
-            port: 27017,
-            dbName: "pa-db"
-        }
+        host: "localhost",
+        port: 27017,
+        dbName: "pa-db"
+    },
+    backEnd: {
+        host: "localhost",
+        port: 8080
+    },
+    frontEnd: {
+        host: "localhost",
+        port: 8090
     }
 }
