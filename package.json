@@ -10,7 +10,7 @@
     "front_end_dir": "dist/main/frontEnd",
     "db_dir": "dist/main/db",
     "src_db_dir": "src/main/db",
-    "migrate_mongoose_config": "dist/main/db/migrate.config.js",
+    "migrate_mongoose_config": "dist/main/db/migrate.conf.js",
     "webpack_config": "dist/main/frontEnd/webpack.config.js"
   },
   "scripts": {
