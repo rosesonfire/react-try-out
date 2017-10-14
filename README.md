@@ -5,8 +5,8 @@
 `npm run start`
 ## Notes
 - Servers will automatically reload on changes.
-- Browsers will automatically reload on changes in [frontEnd](frontEnd) folder.
-- Code inside [dist](dist) are auto-generated, **DO NOT** make any change any code in it.
+- Browsers will automatically reload on changes in [frontEnd](src/main/frontEnd) folder.
+- Code inside [dist](src/main/dist) are auto-generated, **DO NOT** make any change any code in it.
 - Edit code inside [src](src) for development purpose.
 - Database used is **mongoDB**.
 ## Mode
