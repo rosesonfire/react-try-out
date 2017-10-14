@@ -19,7 +19,7 @@ All the necessary configurations like back end server, front end server, databas
 - To migrate up run `npm run migrate`. This will migrate up all the migrations into the database.
 - To migrate down run `npm run migrate down <name>`. This will migrate down the migration with the given name from the database.
 - To list migrations run `npm run list-migrations`. This will list all the migrations with their statuses.
-- To prun migrations run `npm run prune-migration`. This will remove all the deleted migration from the database.
+- To prun migrations run `npm run prune-migrations`. This will remove all the deleted migrations from the database.
 ## Files
 1. [.babelrc](.babelrc) - the babel configuration file, for configuring es6 traspilation configuration.
 1. [package.json](package.json) - npm package configuration. Contains list of dependencies and scripts. A [README](package.json.README.md) is available for it.
@@ -37,9 +37,9 @@ All the necessary configurations like back end server, front end server, databas
             1. [routes.js](src/main/backEnd/routes.js) - HTTP routing code.
         1. [config](src/main/config) - contains different configurations.
             1. [dev.conf.js](src/main/config/dev.conf.js) - configuration file for **devlopment mode**.
-            1. [index.js](src/main/config/prod.conf.js) - configuration resolved based on **mode**.
+            1. [index.js](src/main/config/index.js) - configuration resolved based on **mode**.
             1. [prod.conf.js](src/main/config/prod.conf.js) - configuration file **production mode**.
-            1. [conf.README.md](src/main/config/prod.conf.js) - describes the configurations.
+            1. [conf.README.md](src/main/config/conf.README.md) - describes the configurations.
         1. [dataAccess](src/main/dataAccess) - contains the database schemas.
         1. [db](src/main/db) - contains the database migration configurations.
             1. [migrations](src/main/db/migrations) - contains the database migration files.
