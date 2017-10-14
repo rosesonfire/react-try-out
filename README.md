@@ -39,7 +39,7 @@ All the necessary configurations like back end server, front end server, databas
             1. [dev.conf.js](src/main/config/dev.conf.js) - configuration file for **devlopment mode**.
             1. [index.js](src/main/config/index.js) - configuration resolved based on **mode**.
             1. [prod.conf.js](src/main/config/prod.conf.js) - configuration file **production mode**.
-            1. [conf.README.md](src/main/config/conf.README.md) - describes the configurations.
+            1. [config.README.md](src/main/config/config.README.md) - describes the configurations.
         1. [dataAccess](src/main/dataAccess) - contains the database schemas.
         1. [db](src/main/db) - contains the database migration configurations.
             1. [migrations](src/main/db/migrations) - contains the database migration files.
