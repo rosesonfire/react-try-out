@@ -13,7 +13,7 @@
 - **Development mode** - set `NODE_ENV` to `development`.
 - **Production mode** - set `NODE_ENV` to `production`.
 ## Configuration files
-All the necessary configurations like back end server, front end server, database, etc are stored in the [configuration folder]([src/main/config]). A [README](src/main/config/config.README.md) is available for it.
+All the necessary configurations like back end server, front end server, database, etc are stored in the [configuration folder](src/main/config). A [README](src/main/config/config.README.md) is available for it.
 ## Database migraiton
 - To create a new migration run `npm run create-migration <name>`. This will create a new migration in [src/main/db/migrations](src/main/db/migrations) with the given _name_.
 - To migrate up run `npm run migrate`. This will migrate up all the migrations into the database.
