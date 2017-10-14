@@ -1,10 +1,12 @@
 "use strict";
 
 module.exports = {
-    app: {
-        server: {
-            host: "localhost",
-            port: 8080
+    backEnd: {
+        app: {
+            server: {
+                host: "localhost",
+                port: 8080
+            }
         }
     },
     db: {

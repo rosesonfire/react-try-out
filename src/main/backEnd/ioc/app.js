@@ -19,7 +19,7 @@ function getApp(host, port) {
 
 exports = module.exports = function(config) {
 
-  const serverConfig = config.app.server;
+  const serverConfig = config.backEnd.server;
   const app = getApp(serverConfig.host, serverConfig.port);
 
   return app;

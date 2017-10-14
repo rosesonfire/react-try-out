@@ -1,25 +1,15 @@
 "use strict";
 
-import { MongoClient } from 'mongodb';
-import assert from 'assert';
+import mongoose from 'mongoose';
 
-
-function getDB(host, port, dbName) {
-
-    const url = `mongodb://${host}:${port}/${dbName}`;
-
-    const db = MongoClient.connect(url);
-
-    return db;
-
-}
 
 exports = module.exports = function(config) {
 
   const dbConfig = config.db.connection;
-  const db = getDB(dbConfig.host, dbConfig.port, dbConfig.dbName);
-
-  return db;
+  
+  const connection = mongoose.createConnection(dbConfig.host, dbConfig.dbName, dbConfig.port);
+  
+  return connection;
   
 }
    

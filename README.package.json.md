@@ -1,11 +1,16 @@
 # Scripts
-1. **clean** - clears the "dist" folder
-1. **build** - transpiles ES6 code of "src" folder into "dist" folder
+1. **clean** - clears the _dist_ folder
+1. **build** - transpiles ES6 code of _src_ folder into _dist_ folder
 1. **clean-build** - runs **clean**, then **build**
-1. **build-with-watch** - transpiles ES6 code of "src" folder into "dist" folder, then starts a watcher to detect changes in "src" folder and re-transpiles every time a change is detected
-1. **start-back-end-server** - starts node monitor, then starts a watcher to detect changes in "dist/back-end" folder and re-starts node monitor every time a change is detected
-1. **start-front-end-server** - starts webpack dev server, then starts a watcher to detect changes in "dist/front-end" folder and re-starts webpack dev server every time a change is detected
-1. **start-servers-and-watchers** - runs **start-back-end-server**, **start-front-end-server** and **build-with-watch**
+1. **build-with-watch** - transpiles ES6 code of _src_ folder into _dist_ folder, then starts a watcher to detect changes in _src_ folder and re-transpiles every time a change is detected
+1. **list-migrations** - lists all existing db migrations in _dist/db/migrations_ along with their statuses
+1. **create-migration \<name\>** - creates a new migration in _src/db/migrations_ folder
+1. **prune-migrations** - removes migrations from database which are not present in _dist/db/migrations_
+1. **migrate** - migrates up unmigrated migrations in _dist/db/migrations_ to database
+1. **migrate-down \<name\>** - migrates down a migrated migration in _dist/db/migrations_ from database
+1. **start-back-end** - starts node monitor, then starts a watcher to detect changes in _dist/backEnd_ folder and re-starts node monitor every time a change is detected
+1. **start-front-endr** - starts webpack dev server, then starts a watcher to detect changes in _dist/frontEnd_ folder and re-starts webpack dev server every time a change is detected
+1. **start-servers-and-watchers** - runs **start-back-end**, **start-front-end** and **build-with-watch**
 1. **start** - runs **clean-build**, then **start-servers-and-watchers**
 # Dependencies
 1. **babel-cli** - for transpiling es6 code
@@ -20,7 +25,9 @@
 1. **extract-text-webpack-plugin** - plugin for webpack to create separate bundled css file
 1. **html-webpack-exclude-assets-plugin** - plugin for webpack to exclude static files from being injected into html file
 1. **html-webpack-plugin** - for injecting webpack bundles into html file
+1. **migrate-mongoose** - framework for handling mongo db migrations
 1. **mongodb** - for accessing mongoDB
+1. **mongoose** - ORM framework for mongoDB
 1. **node** - node core
 1. **node-sass** - for compile sass files
 1. **nodemon** - for detecting changes in dist folder and auto-restarting server

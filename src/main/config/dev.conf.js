@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-    app: {
+    backEnd: {
         server: {
             host: "localhost",
             port: 8080

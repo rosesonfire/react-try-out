@@ -3,13 +3,9 @@
 export default async function setRoutes(_app, _db) {
 
     const app = await _app;
-    const db = await await _db;
+    const db = await _db;
 
     app.get("^/service/permissions/pages$", function(req, res) {
-
-        const pages = db.collection("pages").find({}).toArray(function(err, docs) {
-            console.dir(docs);
-        });;
 
         res.send([
             "page_home",

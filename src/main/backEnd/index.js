@@ -6,7 +6,7 @@ import setRoutes from "./routes";
 
 // === initialize inversion of control framework ===
 
-IoC.use(IoC.dir("dist/main/back-end/ioc"));
+IoC.use(IoC.dir("dist/main/backEnd/ioc"));
 
 // ========= Console log colorization ==============
 
