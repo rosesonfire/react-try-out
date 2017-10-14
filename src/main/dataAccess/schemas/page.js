@@ -1,9 +1,9 @@
 "use strict";
 
-import mongoose from 'mongoose';
+import { Schema } from 'mongoose';
 
 const page = new Schema({
-    id                  : ObjectId,
+    id                  : String,
     name                : String,
     dateCreated         : Date,
     dateModified        : Date

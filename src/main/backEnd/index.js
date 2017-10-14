@@ -2,7 +2,6 @@
 
 import colors from "colors";
 import IoC from "electrolyte";
-import setRoutes from "./routes";
 
 // === initialize inversion of control framework ===
 
@@ -14,13 +13,12 @@ colors.setTheme({
     error: "red"
 });
 
- // ========== Initialize mvc application ==========
+// ========== Initialize mvc application ==========
 
 const app = IoC.create("app");
-const db = IoC.create("db");
-
-setRoutes(app, db);
 
 app.then(_app => {
+    
     _app.listen2(function(){}, function(){});
+    
 });

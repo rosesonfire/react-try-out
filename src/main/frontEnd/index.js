@@ -21,8 +21,8 @@ async function getPages() {
 
 async function start() {
 
-    const pages = await getPages();
-    const mainContainerElement =  document.getElementById("main-container");
+    const pages = getPages();
+    const mainContainerElement = document.getElementById("main-container");
     
     ReactDOM.render(
         <App pages={pages}/>,
@@ -32,5 +32,7 @@ async function start() {
 }
 
 start().catch(err => {
+
     console.error(err.message);
+    
 });

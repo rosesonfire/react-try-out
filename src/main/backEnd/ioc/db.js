@@ -5,10 +5,20 @@ import { dbConfig } from "./../../config";
 
 
 exports = module.exports = function() {
-  
-  const connection = mongoose.createConnection(dbConfig.host, dbConfig.dbName, dbConfig.port);
-  
-  return connection;
+
+  let db = null;
+
+  try {
+
+    db = mongoose.createConnection(dbConfig.host, dbConfig.dbName, dbConfig.port);    
+
+  } catch (e) {
+    
+    console.log(e.message.error);
+
+  }
+
+  return db;
   
 }
 

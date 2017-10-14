@@ -30,11 +30,11 @@ All the necessary configurations like back end server, front end server, databas
         1. [backEnd](src/main/backEnd) - contains the back end code.
             1. [app](src/main/backEnd/app) - contains the mvc application.
                 1. [controllers](src/main/backEnd/app/controllers) - contains the mvc controllers.
-                1. [models](src/main/backEnd/app/models) - contains the mvc models.
+                1. [services](src/main/backEnd/app/services) - contains the business logic.
             1. [index.js](src/main/backEnd/index.js) - the code that is run by nodemon for starting the back end server.
             1. [ioc](src/main/backEnd/ioc) - contains inversion of control configurations.
             1. [lib](src/main/backEnd/lib) - contains customized libraries.
-            1. [routes.js](src/main/backEnd/routes.js) - HTTP routing code.
+            1. [Router](src/main/backEnd/router.js) - HTTP router.
         1. [config](src/main/config) - contains different configurations.
             1. [dev.conf.js](src/main/config/dev.conf.js) - configuration file for **devlopment mode**.
             1. [index.js](src/main/config/index.js) - configuration resolved based on **mode**.
