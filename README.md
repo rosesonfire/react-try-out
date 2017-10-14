@@ -29,7 +29,7 @@ All the necessary configurations like back end server, front end server, databas
     1. [main](src/main) - the dev code.
         1. [backEnd](src/main/backEnd) - contains the back end code.
             1. [app](src/main/backEnd/app) - contains the mvc application.
-                1. [controllers](src/main/backEnd/app/controllers) - contains the mvc conrollers.
+                1. [controllers](src/main/backEnd/app/controllers) - contains the mvc controllers.
                 1. [models](src/main/backEnd/app/models) - contains the mvc models.
             1. [index.js](src/main/backEnd/index.js) - the code that is run by nodemon for starting the back end server.
             1. [ioc](src/main/backEnd/ioc) - contains inversion of control configurations.
