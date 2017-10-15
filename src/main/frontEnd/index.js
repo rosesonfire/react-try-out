@@ -2,7 +2,6 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import fetch from "node-fetch";
 import App from "./app/components/app";
 import registeredPages from "./registry/pages";
 import { frontEndConfig } from './../config';
@@ -11,7 +10,7 @@ import { frontEndConfig } from './../config';
 
 async function getPages() {
 
-    const response = await fetch(`http://${frontEndConfig.host}:${frontEndConfig.port}/service/permissions/pages`);
+    const response = await fetch("/service/permissions/pages");
     const responseIds = await response.json();
     const pages = registeredPages.filter(page => responseIds.includes(page.id));
 

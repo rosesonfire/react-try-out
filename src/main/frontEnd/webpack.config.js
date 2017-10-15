@@ -6,7 +6,7 @@ import WebpackOnBuildPlugin from "on-build-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackExcludeAssetsPlugin from "html-webpack-exclude-assets-plugin";
 import { exec } from "child_process";
-import { backEndConfig } from "./../config";
+import { backEndConfig, frontEndConfig } from "./../config";
 
 const scripts = "./scripts/script.js";
 const styles = "./styles/style.scss";
@@ -55,7 +55,8 @@ module.exports = {
         })
     ],
     devServer: {
-        port: 8090,
+        host: frontEndConfig.host,
+        port: frontEndConfig.port,
         inline: true,
         open: true,
         proxy: {
