@@ -1,9 +1,7 @@
 "use strict";
 
-import mongoose from "mongoose";
-
 // TODO: Can this be done without mutation?
-export default function mongooseWrapper(host, dbName, port) {
+export default function mongooseWrapper(mongoose, host, dbName, port) {
     
     mongoose.Promise = Promise;
     

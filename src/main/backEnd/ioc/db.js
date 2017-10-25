@@ -1,8 +1,8 @@
 "use strict";
 
+import mongoose from "mongoose";
 import mongooseWrapper from "./../lib/mongooseWrapper";
 import { dbConfig } from "./../../config";
-
 
 exports = module.exports = function() {
 
@@ -10,7 +10,7 @@ exports = module.exports = function() {
 
   try {
 
-    db = mongooseWrapper(dbConfig.host, dbConfig.dbName, dbConfig.port);
+    db = mongooseWrapper(mongoose, dbConfig.host, dbConfig.dbName, dbConfig.port);
 
   } catch (e) {
     
