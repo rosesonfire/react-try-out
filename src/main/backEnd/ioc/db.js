@@ -1,6 +1,6 @@
 "use strict";
 
-import mongoose from "mongoose";
+import mongooseWrapper from "./../lib/mongooseWrapper";
 import { dbConfig } from "./../../config";
 
 
@@ -10,8 +10,7 @@ exports = module.exports = function() {
 
   try {
 
-    mongoose.Promise = Promise;
-    db = mongoose.createConnection(dbConfig.host, dbConfig.dbName, dbConfig.port);    
+    db = mongooseWrapper(dbConfig.host, dbConfig.dbName, dbConfig.port);
 
   } catch (e) {
     

@@ -1,6 +1,6 @@
 "use strict";
 
-import pageSchema from "./../../../dataAccess/schemas/page";
+import page from "./../../app/models/page";
 
 exports = module.exports = function(db) {
 
@@ -8,7 +8,7 @@ exports = module.exports = function(db) {
   
   try {
 
-    Page = db.model("page", pageSchema);
+    Page = page(db);
 
   } catch (e) {
     

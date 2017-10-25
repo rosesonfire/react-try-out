@@ -1,5 +1,11 @@
+"use strict";
+
+import express from "express";
+
 // TODO: Can this be done without mutation?
-export default function expressWrapper(app, host, port, middlewares, router) {
+export default function expressWrapper(host, port, middlewares, router) {
+    
+    const app = express();
     
     middlewares.setMiddlewares(app);
     router.setRoutes(app);

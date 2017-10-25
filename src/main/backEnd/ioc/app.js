@@ -1,24 +1,7 @@
 "use strict";
 
-import express from "express";
 import expressWrapper from "./../lib/expressWrapper";
 import { backEndConfig } from "./../../config";
-
-function getApp(host, port, middlewares, router) {
-
-  const _app = express();
-
-  const app = expressWrapper(
-    _app,
-    host,
-    port,
-    middlewares,
-    router
-  );
-
-  return app;
-
-}
 
 exports = module.exports = function(middlewares, router) {
 
@@ -26,7 +9,7 @@ exports = module.exports = function(middlewares, router) {
   
   try {
 
-    app = getApp(backEndConfig.host, backEndConfig.port, middlewares, router);
+    app = expressWrapper(backEndConfig.host, backEndConfig.port, middlewares, router);
 
   } catch (e) {
     
