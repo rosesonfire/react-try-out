@@ -1,7 +1,7 @@
 "use strict";
 
 import React, { Component } from "react";
-import InfiniteCalendar from 'react-infinite-calendar';
+import InfiniteCalendar from "react-infinite-calendar";
 
 
 export default class YearlyEvents extends Component {

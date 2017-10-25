@@ -18,6 +18,7 @@
 1. **babel-preset-env** - for transpiling es6 code.
 1. **babel-preset-es2015** - for transpiling es6 code.
 1. **babel-preset-react** - for transpiling jsx.
+1. **body-parser** - for parsing post request body.
 1. **colors** - for adding colors to console logs.
 1. **css-loader** - css loader for webpack.
 1. **electrolyte** - for managing inversion of control and dependency injection.

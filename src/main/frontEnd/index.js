@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app/components/app";
 import registeredPages from "./registry/pages";
-import { frontEndConfig } from './../config';
+import { frontEndConfig } from "./../config";
 
 // ========== Initialize application ==========
 

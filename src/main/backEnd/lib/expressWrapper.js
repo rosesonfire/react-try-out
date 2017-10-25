@@ -1,10 +1,11 @@
 // TODO: Can this be done without mutation?
-export default function expressWrapper(expressApp, host, port, router) {
+export default function expressWrapper(app, host, port, middlewares, router) {
     
-    router.setRoutes(expressApp);
+    middlewares.setMiddlewares(app);
+    router.setRoutes(app);
     
-    expressApp.listen2 = (preListenF, postListenF) => {
-        expressApp.listen(
+    app.listen2 = (preListenF, postListenF) => {
+        app.listen(
             port,
             host,
             function() {
@@ -18,5 +19,5 @@ export default function expressWrapper(expressApp, host, port, router) {
         );
     }
 
-    return expressApp;
+    return app;
 }

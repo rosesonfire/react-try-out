@@ -1,6 +1,6 @@
 "use strict";
 
-import Router from "./../router";
+import Router from "./../../config/router";
 
 exports = module.exports = function(pagesController) {
   

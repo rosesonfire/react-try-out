@@ -1,5 +1,7 @@
 "use strict";
 
+import passport from 'passport';
+
 export default class Router {
 
     constructor(pagesController) {
@@ -10,15 +12,10 @@ export default class Router {
 
     setRoutes(app) {
 
-        const pagesController = this.pagesController;
-
-        app.get("^/service/permissions/pages$", async function(req, res) {
-
-            const pageIds = await pagesController.getPageIds();
-            
-            res.send(pageIds);
-
-        });
+        app.get(
+            "^/service/permissions/pages$",
+            this.pagesController.getPageIds.bind(this.pagesController)
+        );
     
         app.get("^/$", function(req, res){
 

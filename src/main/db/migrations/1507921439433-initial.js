@@ -1,3 +1,4 @@
+"use strict";
 
 /**
  * Make any changes you need to make to the database here

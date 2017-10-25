@@ -15,10 +15,14 @@ colors.setTheme({
 
 // ========== Initialize mvc application ==========
 
-const app = IoC.create("app");
+async function initialize() {
 
-app.then(_app => {
+    const app = await IoC.create("app");
     
-    _app.listen2(function(){}, function(){});
+    app.listen2(function(){}, function(){});
     
+}
+    
+initialize().catch(err => {
+    console.log(err.message.error);
 });

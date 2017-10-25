@@ -1,6 +1,6 @@
 "use strict";
 
-import { Schema } from 'mongoose';
+import { Schema } from "mongoose";
 
 const page = new Schema({
     id                  : String,

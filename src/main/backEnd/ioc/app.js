@@ -1,10 +1,10 @@
 "use strict";
 
 import express from "express";
-import expressWrapper from './../lib/expressWrapper';
+import expressWrapper from "./../lib/expressWrapper";
 import { backEndConfig } from "./../../config";
 
-function getApp(host, port, router) {
+function getApp(host, port, middlewares, router) {
 
   const _app = express();
 
@@ -12,6 +12,7 @@ function getApp(host, port, router) {
     _app,
     host,
     port,
+    middlewares,
     router
   );
 
@@ -19,13 +20,13 @@ function getApp(host, port, router) {
 
 }
 
-exports = module.exports = function(router) {
+exports = module.exports = function(middlewares, router) {
 
   let app = null;
   
   try {
 
-    app = getApp(backEndConfig.host, backEndConfig.port, router);
+    app = getApp(backEndConfig.host, backEndConfig.port, middlewares, router);
 
   } catch (e) {
     
@@ -37,5 +38,5 @@ exports = module.exports = function(router) {
   
 }
 
-exports["@require"] = ["router"];
+exports["@require"] = ["config/middlewares", "config/router"];
 exports["@singleton"] = true;

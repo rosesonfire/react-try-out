@@ -8,11 +8,11 @@ export default class PagesController {
         
     }
 
-    getPageIds() {
+    async getPageIds(req, res) {
         
-        const pageIds = this.pagesService.getPageIds();
+        const pageIds = await this.pagesService.getPageIds();
 
-        return pageIds;
+        res.send(pageIds);
         
     }
 }
