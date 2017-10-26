@@ -1,14 +1,22 @@
 "use strict";
 
 import Middlewares from "./../../config/middlewares";
+import bodyParser from 'body-parser';
+import passport from 'passport';
 
-exports = module.exports = function() {
+exports = module.exports = function(User) {
 
   let middlewares = null;
   
   try {
 
-    middlewares = new Middlewares();
+    middlewares = new Middlewares(
+      User,
+      {
+        bodyParser: bodyParser,
+        passport: passport
+      }
+    );
 
   } catch (e) {
     
@@ -20,4 +28,5 @@ exports = module.exports = function() {
   
 }
 
+exports["@require"] = ["models/user"];
 exports["@singleton"] = true;

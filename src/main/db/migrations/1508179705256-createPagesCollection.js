@@ -16,6 +16,12 @@ export async function up () {
   
   await Page.create(
     {
+      id: "page_login",
+      name: "login",
+      dateCreated: new Date(),
+      dateModified: new Date()
+    },
+    {
       id: "page_home",
       name: "home",
       dateCreated: new Date(),

@@ -1,5 +1,6 @@
 "use strict";
 
+import passport from 'passport';
 import Router from "./../../config/router";
 
 exports = module.exports = function(pagesController) {
@@ -8,7 +9,7 @@ exports = module.exports = function(pagesController) {
   
   try {
 
-    router = new Router(pagesController);
+    router = new Router(pagesController, passport);
 
   } catch (e) {
     
