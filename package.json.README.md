@@ -34,7 +34,7 @@
 1. **nodemon** - for detecting changes in dist folder and auto-restarting server.
 1. **on-build-webpack** - to run scripts after every webpack build.
 1. **passport** - for authentication.
-1. **passport-custom** - for custom authentication strategy for passport.
+1. **passport-accesstoken** - authentication strategy for passport.
 1. **react** - react core.
 1. **react-addons-css-transition-group** - for styling infinite calendar.
 1. **react-dom** - for rendering react components into HTML.

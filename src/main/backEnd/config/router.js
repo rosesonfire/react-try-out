@@ -11,29 +11,18 @@ export default class Router {
 
     setRoutes(app) {
 
-        app.post(
-            '^/service/authenticate$', 
-            this.passport.authenticate(
-                'basic-login',
-                {
-                    session: false,
-                    failureRedirect: '/service/unauthorized'
-                }
-            ),
-            function(req, res) {
-                console.log(req.user);
-                res.json({ message: "Authenticated" })
-            }
-        );
-
         app.get("^/service/unauthorized$", function(req, res) {
 
-            res.send("Not authorized");
+            res.status(401).send("Not authorized");
 
         });
 
         app.get(
-            "^/service/permissions/pages$",
+            "^/service/pages$",
+            this.passport.authenticate("token", { 
+                session: false,
+                failureRedirect: '/service/unauthorized' 
+            }),
             this.pagesController.getPageIds.bind(this.pagesController)
         );
     

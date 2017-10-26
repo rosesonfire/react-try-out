@@ -9,7 +9,7 @@ export default class Home extends Component {
     }
     
     static get title() {
-        return "Home View";
+        return "Home";
     }
 
     static get color() {

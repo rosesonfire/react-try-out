@@ -1,42 +1,39 @@
 "use strict";
 
-import { Strategy as CustomStrategy } from 'passport-custom';
+import { Strategy as TokenStrategy } from 'passport-accesstoken';
 
 export default class Middlewares {
 
-    constructor(User, config) {
+    constructor(User, middlewares) {
 
         this.User = User;
-        this.config = config;
+        this.middlewares = middlewares;
 
     }
 
-    setPassportConfig() {
+    configurePassport(User) {
+        
+        this.middlewares.passport.use(new TokenStrategy(
+            {
+                tokenHeader:    'authentication',        
+                tokenField:     'custom-token'
+            },
+            function(authKey, done) {
 
-        this.config.passport.use("basic-login", new CustomStrategy(
-            function(req, done) {
-
-                this.findOne(
-                    {
-                        username: req.body.username,
-                        password: req.body.password
-                    },
-                    function (err, user) {
-                    
-                        return done(err, user);
+                // const user = User.findOne({ authkey: authKey });
                 
-                    }
-                );
-            }.bind(this.User)
+                return done(null, {});
+            }
         ));
+
     }
 
     setMiddlewares(app) {
 
-        this.setPassportConfig();
+        this.configurePassport(this.User);
 
-        app.use(this.config.bodyParser.json());
-        app.use(this.config.passport.initialize());
+        app.use(this.middlewares.bodyParser.json());
+        app.use(this.middlewares.passport.initialize());
 
     }
 }

@@ -47,7 +47,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             hash: true,
             template: "./app/template.html",
-            excludeAssets: [/styles.*js/]
+            excludeAssets: [/styles.*js/],
+            chunksSortMode: function(a, b) {
+                if (a.names[0] === "app") {
+                    return 1;
+                }
+
+                return -1;
+            }
         }),
         new HtmlWebpackExcludeAssetsPlugin(),
         new WebpackOnBuildPlugin(function(stats) {
