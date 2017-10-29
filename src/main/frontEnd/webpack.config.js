@@ -11,6 +11,7 @@ import { backEndConfig, frontEndConfig } from "./../config";
 const scripts = "./scripts/script.js";
 const styles = "./styles/style.scss";
 const app = "./index.js";
+const imgPath = __dirname + "/img";
 const outputPath = __dirname + "/public";
 
 module.exports = {
@@ -67,7 +68,8 @@ module.exports = {
         inline: true,
         open: true,
         proxy: {
-            "*" : `http://${backEndConfig.host}:${backEndConfig.port}`
-        }
+            "/service" : `http://${backEndConfig.host}:${backEndConfig.port}`
+        },
+        contentBase: imgPath
     }
 };

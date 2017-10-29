@@ -106,3 +106,21 @@ export async function getAuthKey() {
     return Error("Failed to authenticate");
 
 }
+
+export async function fbAPI(query) {
+
+    await awaitFB;
+
+    const _fbAPI = await new Promise((success, failure) => {
+        
+        try {
+            FB.api(query, success);
+        } catch (e) {
+            failure(e);
+        }
+
+    });
+
+    return _fbAPI;
+
+}

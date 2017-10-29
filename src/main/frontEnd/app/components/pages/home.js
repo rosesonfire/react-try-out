@@ -26,11 +26,28 @@ export default class Home extends Component {
     
     constructor(props) {
         super(props);
+
+        this.state = {
+            profilePicture: "/profile_picture.png"
+        };
+
+        this.setProfilePic();
+    }
+
+    async setProfilePic() {
+
+        const ppRes = await window.fbAPI("me/picture");
+        const ppUrl = ppRes.data.url;
+
+        this.setState({profilePicture: ppUrl});
     }
 
     render() {
         return (
-            <div><h1>Home</h1></div>
+            <div>
+                <h1>Home</h1>
+                <img src={this.state.profilePicture} />
+            </div>
         )
     }
 }
