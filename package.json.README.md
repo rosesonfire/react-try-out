@@ -37,6 +37,7 @@
 1. **passport-accesstoken** - authentication strategy for passport.
 1. **react** - react core.
 1. **react-addons-css-transition-group** - for styling infinite calendar.
+1. **react-bootstrap** - react components for bootstrap
 1. **react-dom** - for rendering react components into HTML.
 1. **react-infinite-calendar** - react component for calendar.
 1. **react-router-dom** - for client side routing.

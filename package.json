@@ -56,6 +56,7 @@
     "passport-accesstoken": "^0.1.0",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.0.0",
     "react-infinite-calendar": "^2.3.1",
     "react-router-dom": "^4.2.2",
