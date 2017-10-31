@@ -1,6 +1,6 @@
 "use strict";
 
-import { Strategy as TokenStrategy } from 'passport-accesstoken';
+import { Strategy as TokenStrategy } from "passport-accesstoken";
 
 export default class Middlewares {
 
@@ -15,8 +15,8 @@ export default class Middlewares {
         
         this.middlewares.passport.use(new TokenStrategy(
             {
-                tokenHeader:    'authentication',        
-                tokenField:     'custom-token'
+                tokenHeader:    "authentication",        
+                tokenField:     "custom-token"
             },
             function(authKey, done) {
 

@@ -1,8 +1,8 @@
 "use strict";
 
 import Middlewares from "./../../config/middlewares";
-import bodyParser from 'body-parser';
-import passport from 'passport';
+import bodyParser from "body-parser";
+import passport from "passport";
 
 exports = module.exports = function(User) {
 
@@ -20,7 +20,7 @@ exports = module.exports = function(User) {
 
   } catch (e) {
     
-    console.log(e.message.error);
+    console.error(e.message.error);
 
   }
 

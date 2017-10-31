@@ -21,7 +21,7 @@ export default class Router {
             "^/service/pages$",
             this.passport.authenticate("token", { 
                 session: false,
-                failureRedirect: '/service/unauthorized' 
+                failureRedirect: "/service/unauthorized" 
             }),
             this.pagesController.getPageIds.bind(this.pagesController)
         );

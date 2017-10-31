@@ -2,63 +2,43 @@
 
 import React, { Component } from "react";
 import { HashRouter, Link, Route } from "react-router-dom";
-import registeredPages from "./../../registry/pages";
+import { connect } from "react-redux";
+import { fetchPages, clearPages } from "./../actions/pages";
+import { setLoginStatus, fetchUserData, clearUserData } from "./../actions/fb";
 
+@connect(store => {
+
+    return {
+        pages: (store.pages && store.pages.pages) ? store.pages.pages : [],
+        isAuthenticated: store.fb.isAuthenticated
+    }
+
+}, dispatch => {
+
+    // use RxJS to do this kinda stuff
+    window.streamAuthStatus((isAuthenticated) => {
+
+        dispatch(setLoginStatus(isAuthenticated));
+
+        if (isAuthenticated === "connected") {
+            dispatch(fetchPages());
+            dispatch(fetchUserData());
+        } else {
+            dispatch(clearPages());
+            dispatch(clearUserData());
+        }
+        
+
+    });
+
+    return {};
+
+})
 export default class App extends Component {
-    
-    constructor(props) {
-
-        super(props);
-
-        this.state = {
-            pages: [],
-            _isAuthenticated: null
-        }
-
-        window.trackAuth(function(_isAuthenticated) {
-            
-            this.setState({_isAuthenticated: _isAuthenticated});
-
-            if (_isAuthenticated) {
-                this.fetchPages();
-            }
-
-        }.bind(this));
-
-    }
-
-    async fetchPages() {
-        
-        const authKey = await window.getAuthKey();
-        const response = await fetch("/service/pages", {
-            method: "GET",
-            headers: new Headers({
-                authentication: authKey
-            })
-        });
-        
-        if (response.status !== 200) {
-            throw new Error("Status error " + response.status);
-        }
-    
-        const responseIds = await response.json();
-        const pages = registeredPages.filter(page => responseIds.includes(page.id));
-    
-        this.setState({pages: pages});
-    
-    }
 
     render() {
 
-        if (this.state._isAuthenticated === null) {
-            return (
-                <div>Loading ...</div>
-            )
-        } else if (this.state._isAuthenticated === false) {
-            
-            return <div>Please login</div>
-        }
-        else if (this.state._isAuthenticated) {
+        if (this.props.isAuthenticated === "connected") {
 
             return (
                 <HashRouter>
@@ -66,7 +46,7 @@ export default class App extends Component {
                         <div>
                             <ul className="nav nav-tabs">
                                 {
-                                    this.state.pages.map((page, i) => {
+                                    this.props.pages.map((page, i) => {
                                         return (
                                             <li key={i}><Link to={page.href}>{page.title}</Link></li>
                                         )
@@ -75,7 +55,7 @@ export default class App extends Component {
                             </ul>
                         </div>
                         {
-                            this.state.pages.map((page, i) => {
+                            this.props.pages.map((page, i) => {
                                 return (
                                     <Route path={page.href} component={page} key={i}/>
                                 )
@@ -83,8 +63,15 @@ export default class App extends Component {
                         }
                     </div>
                 </HashRouter>);
+
+        } else if (this.props.isAuthenticated) {
+            
+            return <div>Please login</div>
         } else {
-            throw new Error("Something's wrong");
+
+            return (
+                <div>Loading ...</div>
+            )
         }
 
     }

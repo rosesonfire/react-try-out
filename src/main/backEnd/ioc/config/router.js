@@ -1,6 +1,6 @@
 "use strict";
 
-import passport from 'passport';
+import passport from "passport";
 import Router from "./../../config/router";
 
 exports = module.exports = function(pagesController) {
@@ -13,7 +13,7 @@ exports = module.exports = function(pagesController) {
 
   } catch (e) {
     
-    console.log(e.message.error);
+    console.error(e.message.error);
 
   }
 

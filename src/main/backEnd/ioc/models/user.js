@@ -12,7 +12,7 @@ exports = module.exports = function(db) {
 
   } catch (e) {
     
-    console.log(e.message.error);
+    console.error(e.message.error);
 
   }
 

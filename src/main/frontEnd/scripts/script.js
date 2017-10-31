@@ -1,8 +1,8 @@
 "use strict";
 
-import { trackAuth, getAuthKey, fbAPI } from './fb';
+import { streamAuthStatus, getAuthKey, fbAPI } from "./fb";
 
-window.trackAuth = trackAuth;
+window.streamAuthStatus = streamAuthStatus;
 window.getAuthKey = getAuthKey;
 window.fbAPI = fbAPI;
 

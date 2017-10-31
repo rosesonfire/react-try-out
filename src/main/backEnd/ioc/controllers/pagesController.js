@@ -12,7 +12,7 @@ exports = module.exports = function(pagesService) {
 
   } catch (e) {
     
-    console.log(e.message.error);
+    console.error(e.message.error);
 
   }
 

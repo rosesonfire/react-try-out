@@ -15,6 +15,8 @@
 # Dependencies
 1. **babel-cli** - for transpiling es6 code.
 1. **babel-loader** - for transpiling jsx and es6 in webpack.
+1. **babel-plugin-transform-decorators-legacy** - babel plugin for compiling es7 decorators.
+1. **babel-plugin-transform-object-rest-spread** - babel plugin for destructuring json.
 1. **babel-preset-env** - for transpiling es6 code.
 1. **babel-preset-es2015** - for transpiling es6 code.
 1. **babel-preset-react** - for transpiling jsx.
@@ -40,7 +42,11 @@
 1. **react-bootstrap** - react components for bootstrap
 1. **react-dom** - for rendering react components into HTML.
 1. **react-infinite-calendar** - react component for calendar.
+1. **react-redux** - for managing state of react components.
 1. **react-router-dom** - for client side routing.
+1. **redux** - for managing state of the application.
+1. **redux-logge** - redux middleware for logging actions.
+1. **redux-promise-middleware** - redux middleware for processing promises.
 1. **sass-loader** - for bundling scss in webpack.
 1. **webpack** - bundle static files and react files.
 1. **webpack-dev-server** - for serving static files after bundling with webpack.

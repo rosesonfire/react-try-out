@@ -9,18 +9,24 @@ export default function expressWrapper(express, host, port, middlewares, router)
     router.setRoutes(app);
     
     app.listen2 = (preListenF, postListenF) => {
+
         app.listen(
             port,
             host,
             function() {
+
               console.log("Starting server...");
               preListenF();
+
             },
             function() {
+
               console.log(`Started server at (${host}, ${port})...`);
               postListenF();
+
             }
         );
+        
     }
 
     return app;

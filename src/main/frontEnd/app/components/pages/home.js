@@ -1,8 +1,18 @@
 "use strict";
 
 import React, { Component } from "react";
-import { Grid, Row, Col, Image, Label } from 'react-bootstrap';
+import { Grid, Row, Col, Image, Label } from "react-bootstrap";
+import { connect } from "react-redux";
 
+
+@connect(store => {
+    
+    return {
+        userName: store.fb ? store.fb.userName : "Loading...",
+        profilePicture: store.fb ? store.fb.profilePicture : "/profile_picture.png"
+    }
+
+})
 export default class Home extends Component {
     
     static get id() {
@@ -24,45 +34,15 @@ export default class Home extends Component {
     static get href() {
         return "/home";
     }
-    
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            userName: "Loading...",
-            profilePicture: "/profile_picture.png"
-        };
-        this.setUserName();
-        this.setProfilePic();
-
-    }
-
-    async setUserName() {
-
-        const uNameRes = await window.fbAPI("me");
-        const uName = uNameRes.name;
-
-        this.setState({userName: uName});
-
-    }
-
-    async setProfilePic() {
-
-        const ppRes = await window.fbAPI("me/picture");
-        const ppUrl = ppRes.data.url;
-
-        this.setState({profilePicture: ppUrl});
-
-    }
 
     render() {
         return (
             <div>
-                <h1><Label>{this.state.userName}</Label></h1>
+                <h1><Label>{this.props.userName}</Label></h1>
                 <Grid>
                     <Row>
                         <Col xs={12} md={12} sm={12}>
-                            <Image src={this.state.profilePicture} rounded />
+                            <Image src={this.props.profilePicture} rounded responsive/>
                         </Col>
                     </Row>
                 </Grid>

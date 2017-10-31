@@ -24,5 +24,5 @@ async function initialize() {
 }
     
 initialize().catch(err => {
-    console.log(err.message.error);
+    console.error(err.message.error);
 });

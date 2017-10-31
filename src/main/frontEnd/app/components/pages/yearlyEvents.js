@@ -31,6 +31,7 @@ export default class YearlyEvents extends Component {
     }
 
     getData() {
+
         const todayDate = new Date();
         const currentYear = todayDate.getFullYear();
 
@@ -39,10 +40,13 @@ export default class YearlyEvents extends Component {
             fromDate: new Date(currentYear, 1, 1),
             toDate: new Date(currentYear, 12, 31)
         }
+        
     }
 
     click(date) {
+
         console.log("clicked", date);
+
     }
 
     render() {

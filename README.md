@@ -50,8 +50,10 @@ All the necessary configurations like back end server, front end server, databas
         1. [frontEnd](src/main/frontEnd) - contains the front end code.
             1. [app](src/main/frontEnd/app) - contains the react application.
                 1. [components](src/main/frontEnd/app/components) - contains the react components.
+                    1. [actions](src/main/frontEnd/app/actions) - contains the redux actions.
                     1. [App](src/main/frontEnd/app/components/app.js) - react entry component.
                     1. [pages](src/main/frontEnd/app/components/pages) - contains the client side routed pages.
+                    1. [reducers](src/main/frontEnd/app/reducers) - contains the redux reducers.
                 1. [template.html](src/main/frontEnd/app/template.html) - landing template for react application.
             1. [img](src/main/frontEnd/img) - folder for storing custom images.
             1. [index.js](src/main/frontEnd/index.js) - the code that is run by webpack dev server for starting the front end server.
@@ -60,6 +62,7 @@ All the necessary configurations like back end server, front end server, databas
             1. [styles](src/main/frontEnd/styles) - folder for storing custom css.
             1. [webpack.config.js](src/main/frontEnd/webpack.config.js) - contains the webpack configurations.
     1. [test](src/test) - the test code.
+1. [tsconfig.json](tsconfig.json) - type script configuration. Needed for decorators in vscode.
 ## Generated folders and files
 1. [dist](dist) - the folder in which the es6 code is transpiled into and the servers runs on.
 1. [node_modules](node_modules) - the folder in which the node modules are installed.
