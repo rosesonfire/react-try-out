@@ -45,7 +45,7 @@
 1. **react-redux** - for managing state of react components.
 1. **react-router-dom** - for client side routing.
 1. **redux** - for managing state of the application.
-1. **redux-logge** - redux middleware for logging actions.
+1. **redux-logger** - redux middleware for logging actions.
 1. **redux-promise-middleware** - redux middleware for processing promises.
 1. **sass-loader** - for bundling scss in webpack.
 1. **webpack** - bundle static files and react files.
