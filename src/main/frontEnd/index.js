@@ -14,7 +14,7 @@ import authMiddleware from "./app/middlewares/auth";
 
 // ========== Initialize application ==========
 
-function createReduxStore() {
+const createReduxStore = () => {
 
     const middlewares = applyMiddleware(
         reduxThunk,
@@ -27,7 +27,7 @@ function createReduxStore() {
 
 }
 
-async function start() {
+const start = async () => {
 
     const store = createReduxStore();
     const mainContainerElement = document.getElementById("main-container");

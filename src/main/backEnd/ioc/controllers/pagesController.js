@@ -2,7 +2,7 @@
 
 import PagesController from "./../../app/controllers/pagesController";
 
-exports = module.exports = function(pagesService) {
+exports = module.exports = (pagesService) => {
 
   let pagesController = null;
   

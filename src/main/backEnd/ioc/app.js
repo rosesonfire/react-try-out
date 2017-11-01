@@ -4,7 +4,7 @@ import express from "express";
 import expressWrapper from "./../lib/expressWrapper";
 import { backEndConfig } from "./../../config";
 
-exports = module.exports = function(middlewares, router) {
+exports = module.exports = (middlewares, router) => {
 
   let app = null;
   

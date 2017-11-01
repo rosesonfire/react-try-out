@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import mongooseWrapper from "./../lib/mongooseWrapper";
 import { dbConfig } from "./../../config";
 
-exports = module.exports = function() {
+exports = module.exports = () => {
 
   let db = null;
 

@@ -2,7 +2,7 @@
 
 import user from "./../../app/models/user";
 
-exports = module.exports = function(db) {
+exports = module.exports = (db) => {
 
   let User = null;
   

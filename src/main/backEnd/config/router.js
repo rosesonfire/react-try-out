@@ -11,7 +11,7 @@ export default class Router {
 
     setRoutes(app) {
 
-        app.get("^/service/unauthorized$", function(req, res) {
+        app.get("^/service/unauthorized$", (req, res) => {
 
             res.status(401).send("Not authorized");
 
@@ -26,13 +26,13 @@ export default class Router {
             this.pagesController.getPageIds.bind(this.pagesController)
         );
     
-        app.get("^/$", function(req, res){
+        app.get("^/$", (req, res) => {
 
             res.status(404).send("Not found!");
 
         })
     
-        app.get("*", function(req, res){
+        app.get("*", (req, res) => {
 
             res.redirect("/");
             

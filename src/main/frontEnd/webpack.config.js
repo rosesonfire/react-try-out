@@ -49,7 +49,7 @@ module.exports = {
             hash: true,
             template: "./app/template.html",
             excludeAssets: [/styles.*js/],
-            chunksSortMode: function(a, b) {
+            chunksSortMode: (a, b) => {
                 if (a.names[0] === "app") {
                     return 1;
                 }
@@ -58,7 +58,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackExcludeAssetsPlugin(),
-        new WebpackOnBuildPlugin(function(stats) {
+        new WebpackOnBuildPlugin((stats) => {
             exec("rm -rf " + outputPath + "/styles.min.js")
         })
     ],

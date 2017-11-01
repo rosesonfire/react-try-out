@@ -2,7 +2,7 @@
 
 import userSchema from "./../../../dataAccess/schemas/user";
 
-export default function page(db) {
+export default (db) => {
 
     return db.model("user", userSchema);
 

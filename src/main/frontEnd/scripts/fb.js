@@ -142,7 +142,7 @@ export const streamAuthStatus = async (onLogin, onLogout) => {
     
     await awaitFB;
 
-    const _callback = function(authStatus) {
+    const _callback = (authStatus) => {
         
         if (authStatus.status) {
 

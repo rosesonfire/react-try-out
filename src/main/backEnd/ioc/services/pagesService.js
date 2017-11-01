@@ -2,7 +2,7 @@
 
 import PagesService from "./../../app/services/pagesService";
 
-exports = module.exports = function(Page) {
+exports = module.exports = (Page) => {
 
   let pagesService = null;
   

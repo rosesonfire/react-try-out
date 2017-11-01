@@ -3,7 +3,7 @@
 import passport from "passport";
 import Router from "./../../config/router";
 
-exports = module.exports = function(pagesController) {
+exports = module.exports = (pagesController) => {
   
   let router = null;
   

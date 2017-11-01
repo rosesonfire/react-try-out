@@ -4,7 +4,7 @@ import Middlewares from "./../../config/middlewares";
 import bodyParser from "body-parser";
 import passport from "passport";
 
-exports = module.exports = function(User) {
+exports = module.exports = (User) => {
 
   let middlewares = null;
   

@@ -2,7 +2,7 @@
 
 import page from "./../../app/models/page";
 
-exports = module.exports = function(db) {
+exports = module.exports = (db) => {
 
   let Page = null;
   

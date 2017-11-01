@@ -1,7 +1,7 @@
 "use strict";
 
 // TODO: Can this be done without mutation?
-export default function expressWrapper(express, host, port, middlewares, router) {
+export default (express, host, port, middlewares, router) => {
     
     const app = express();
     
@@ -13,13 +13,13 @@ export default function expressWrapper(express, host, port, middlewares, router)
         app.listen(
             port,
             host,
-            function() {
+            () => {
 
               console.log("Starting server...");
               preListenF();
 
             },
-            function() {
+            () => {
 
               console.log(`Started server at (${host}, ${port})...`);
               postListenF();

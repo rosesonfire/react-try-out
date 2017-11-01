@@ -18,7 +18,7 @@ export default class Middlewares {
                 tokenHeader:    "authentication",        
                 tokenField:     "custom-token"
             },
-            function(authKey, done) {
+            (authKey, done) => {
 
                 // const user = User.findOne({ authkey: authKey });
                 

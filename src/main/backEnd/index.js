@@ -15,11 +15,11 @@ colors.setTheme({
 
 // ========== Initialize mvc application ==========
 
-async function initialize() {
+const initialize = async () => {
 
     const app = await IoC.create("app");
     
-    app.listen2(function(){}, function(){});
+    app.listen2(() => {}, () => {});
     
 }
     

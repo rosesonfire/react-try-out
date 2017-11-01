@@ -2,7 +2,7 @@
 
 import pageSchema from "./../../../dataAccess/schemas/page";
 
-export default function page(db) {
+export default (db) => {
 
     return db.model("page", pageSchema);
 
