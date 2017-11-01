@@ -1,5 +1,3 @@
-"use strict";
-
 import { streamAuthStatus, getAuthKey, fbAPI } from "./fb";
 
 window.streamAuthStatus = streamAuthStatus;

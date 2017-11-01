@@ -51,3 +51,11 @@
 1. **sass-loader** - for bundling scss in webpack.
 1. **webpack** - bundle static files and react files.
 1. **webpack-dev-server** - for serving static files after bundling with webpack.
+1. **babel-eslint** - for eslint.
+1. **eslint** - for eslint.
+1. **eslint-config-standard** - for eslint.
+1. **eslint-plugin-import** - for eslint.
+1. **eslint-plugin-node** - for eslint.
+1. **eslint-plugin-promise** - for eslint.
+1. **eslint-plugin-react** - for eslint.
+1. **eslint-plugin-standard** - for eslint.

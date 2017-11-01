@@ -1,5 +1,3 @@
-"use strict";
-
 import colors from "colors";
 import IoC from "electrolyte";
 
@@ -10,19 +8,19 @@ IoC.use(IoC.dir("dist/main/backEnd/ioc"));
 // ========= Console log colorization ==============
 
 colors.setTheme({
-    error: "red"
+  error: "red"
 });
 
 // ========== Initialize mvc application ==========
 
 const initialize = async () => {
 
-    const app = await IoC.create("app");
-    
-    app.listen2(() => {}, () => {});
-    
-}
-    
+  const app = await IoC.create("app");
+  
+  app.listen2(() => {}, () => {});
+  
+};
+  
 initialize().catch(err => {
-    console.error(err.message.error);
+  console.error(err.message.error);
 });

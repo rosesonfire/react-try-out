@@ -1,9 +1,7 @@
-"use strict";
-
 import { dbConfig } from "./../config";
 
 module.exports = {
-    dbConnectionUri: `mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.dbName}/migrations`,
-    autosync: true,
-    es6: true
-}
+  dbConnectionUri: `mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.dbName}/migrations`,
+  autosync: true,
+  es6: true
+};

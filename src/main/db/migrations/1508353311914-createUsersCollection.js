@@ -1,5 +1,3 @@
-"use strict";
-
 import userSchema from "./../../dataAccess/schemas/user";
 import { dropModel, getNewModel } from "./../migrationHelper";
 
@@ -30,6 +28,6 @@ export async function up () {
  */
 export async function down () {
   
-  const User = await dropModel2(this);
+  await dropModel2(this);
 
 }

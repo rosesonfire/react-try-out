@@ -1,5 +1,3 @@
-"use strict";
-
 const devFile = "dev.conf";
 const prodFile = "prod.conf";
 const configOptions = {

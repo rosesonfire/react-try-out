@@ -1,18 +1,16 @@
-"use strict";
-
 export default class PagesController {
 
-    constructor(pagesService) {
+  constructor(pagesService) {
 
-        this.pagesService = pagesService;
-        
-    }
+    this.pagesService = pagesService;
+    
+  }
 
-    async getPageIds(req, res) {
-        
-        const pageIds = await this.pagesService.getPageIds();
+  async getPageIds(req, res) {
+    
+    const pageIds = await this.pagesService.getPageIds();
 
-        res.send(pageIds);
-        
-    }
+    res.send(pageIds);
+    
+  }
 }

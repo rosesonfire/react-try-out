@@ -1,5 +1,3 @@
-"use strict";
-
 import pageSchema from "./../../dataAccess/schemas/page";
 import { dropModel, getNewModel } from "./../migrationHelper";
 
@@ -42,6 +40,6 @@ export async function up () {
  */
 export async function down () {
   
-  const Page = await dropModel2(this);
+  await dropModel2(this);
 
 }

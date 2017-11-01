@@ -1,27 +1,25 @@
-"use strict";
-
 import { fetchPages } from "./../services/pages";
 import { fetchUserData } from "./../services/fb";
 
 const loginPayload = async () => {
-    
-    const pages = await fetchPages();
-    const userData = await fetchUserData();
+  
+  const pages = await fetchPages();
+  const userData = await fetchUserData();
 
-    return { pages, userData };
+  return { pages, userData };
 
 };
 
 export const login = (dispatch) => {
 
-    const type = "LOG_IN";
-    const payload = loginPayload();
-    const action = { type, payload };
+  const type = "LOG_IN";
+  const payload = loginPayload();
+  const action = { type, payload };
 
-    dispatch(action);
+  dispatch(action);
 
 };
 
 export const logout = {
-    type: "LOG_OUT"
+  type: "LOG_OUT"
 };

@@ -1,5 +1,3 @@
-"use strict";
-
 import page from "./../../app/models/page";
 
 exports = module.exports = (db) => {
@@ -11,14 +9,14 @@ exports = module.exports = (db) => {
     Page = page(db);
 
   } catch (e) {
-    
+  
     console.error(e.message.error);
 
   }
 
   return Page;
   
-}
+};
    
 exports["@require"] = ["db"];
 exports["@singleton"] = true;

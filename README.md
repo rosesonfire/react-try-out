@@ -23,6 +23,7 @@ All the necessary configurations like back end server, front end server, databas
 ## Files
 1. [.babelrc](.babelrc) - the babel configuration file, for configuring es6 traspilation configuration.
 1. [config.README.md](config.README.md) - describes the configurations.
+1. [.eslintrc.json](.eslintrc.json) - eslint configuration file.
 1. [package.json](package.json) - npm package configuration. Contains list of dependencies and scripts. A [README](package.json.README.md) is available for it.
 1. [package.json.README.md](package.json.README.md) - describes the dependencies and scripts in package.json.
 1. [README.md](README.md) - this file, contains necessary documentations.

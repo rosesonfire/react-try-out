@@ -1,9 +1,7 @@
-"use strict";
-
 import pageSchema from "./../../../dataAccess/schemas/page";
 
 export default (db) => {
 
-    return db.model("page", pageSchema);
+  return db.model("page", pageSchema);
 
-}
+};

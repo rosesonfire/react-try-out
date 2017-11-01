@@ -1,5 +1,3 @@
-"use strict";
-
 import PagesService from "./../../app/services/pagesService";
 
 exports = module.exports = (Page) => {
@@ -11,14 +9,14 @@ exports = module.exports = (Page) => {
     pagesService = new PagesService(Page);
 
   } catch (e) {
-    
+  
     console.error(e.message.error);
 
   }
 
   return pagesService;
   
-}
+};
    
 exports["@require"] = ["models/page"];
 exports["@singleton"] = true;
