@@ -21,22 +21,9 @@ const _fetchPages = async () => {
 
     return pages;
 
-}
-
-export const fetchPages = () => {
-
-    return {
-        type: "FETCH_PAGES",
-        payload: _fetchPages()
-    }
-
 };
 
-export const clearPages = () => {
-
-    return {
-        type: "CLEAR_PAGES",
-        payload: null
-    }
-
+export const fetchPages = {
+    type: "FETCH_PAGES",
+    payload: _fetchPages()
 };

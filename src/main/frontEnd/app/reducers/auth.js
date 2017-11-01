@@ -3,10 +3,12 @@
 export default (state={}, action) => {
     
     switch(action.type) {
-        case "FETCH_PAGES_FULFILLED": state = {
+        case "LOG_IN": state = {
             ...state,
-            pages: action.payload
+            isAuthenticated: true
         }
+        break;
+        case "LOG_OUT": state = { isAuthenticated: false }
         break;
     }
 

@@ -52,6 +52,7 @@ All the necessary configurations like back end server, front end server, databas
                 1. [components](src/main/frontEnd/app/components) - contains the react components.
                     1. [actions](src/main/frontEnd/app/actions) - contains the redux actions.
                     1. [App](src/main/frontEnd/app/components/app.js) - react entry component.
+                    1. [middlewares](src/main/frontEnd/app/middlewares) - contains the custom redux middlewares.
                     1. [pages](src/main/frontEnd/app/components/pages) - contains the client side routed pages.
                     1. [reducers](src/main/frontEnd/app/reducers) - contains the redux reducers.
                 1. [template.html](src/main/frontEnd/app/template.html) - landing template for react application.

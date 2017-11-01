@@ -3,18 +3,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
-import reduxPromiseMiddleware from "redux-promise-middleware";
-import reduxLoggerMiddleware from "redux-logger";
+import reduxPromise from "redux-promise-middleware";
+import reduxLogger from "redux-logger";
 import { Provider } from "react-redux";
 import App from "./app/components/app";
 import { frontEndConfig } from "./../config";
-import reducers from "./app/reducers/reducers";
+import reducers from "./app/reducers";
+import authMiddleware from "./app/middlewares/auth";
 
 // ========== Initialize application ==========
 
 function createReduxStore() {
 
-    const middlewares = applyMiddleware(reduxLoggerMiddleware, reduxPromiseMiddleware());
+    const middlewares = applyMiddleware(
+        authMiddleware,
+        reduxLogger,
+        reduxPromise());
     const store = createStore(reducers, {}, middlewares);
 
     return store;
@@ -24,7 +28,6 @@ function createReduxStore() {
 async function start() {
 
     const store = createReduxStore();
-
     const mainContainerElement = document.getElementById("main-container");
     
     ReactDOM.render(<Provider store={store}><App /></Provider>, mainContainerElement);

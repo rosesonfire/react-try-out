@@ -3,33 +3,31 @@
 import React, { Component } from "react";
 import { HashRouter, Link, Route } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchPages, clearPages } from "./../actions/pages";
-import { setLoginStatus, fetchUserData, clearUserData } from "./../actions/fb";
+import { login, logout } from "./../actions/auth";
+import { fetchPages } from "./../actions/pages";
+import { fetchUserData } from "./../actions/fb";
 
 @connect(store => {
 
     return {
         pages: (store.pages && store.pages.pages) ? store.pages.pages : [],
-        isAuthenticated: store.fb.isAuthenticated
+        isAuthenticated: store.auth.isAuthenticated
     }
 
 }, dispatch => {
 
+    const onLogin = () => {
+        dispatch(login);
+        dispatch(fetchPages);
+        dispatch(fetchUserData);
+    };
+
+    const onLogout = () => {
+        dispatch(logout);
+    };
+
     // use RxJS to do this kinda stuff
-    window.streamAuthStatus((isAuthenticated) => {
-
-        dispatch(setLoginStatus(isAuthenticated));
-
-        if (isAuthenticated === "connected") {
-            dispatch(fetchPages());
-            dispatch(fetchUserData());
-        } else {
-            dispatch(clearPages());
-            dispatch(clearUserData());
-        }
-        
-
-    });
+    window.streamAuthStatus(onLogin, onLogout);
 
     return {};
 
@@ -38,7 +36,7 @@ export default class App extends Component {
 
     render() {
 
-        if (this.props.isAuthenticated === "connected") {
+        if (this.props.isAuthenticated) {
 
             return (
                 <HashRouter>
@@ -64,7 +62,7 @@ export default class App extends Component {
                     </div>
                 </HashRouter>);
 
-        } else if (this.props.isAuthenticated) {
+        } else if (this.props.isAuthenticated === false) {
             
             return <div>Please login</div>
         } else {

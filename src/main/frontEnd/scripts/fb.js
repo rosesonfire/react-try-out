@@ -38,7 +38,7 @@ const awaitFB = new Promise((success, failure) => {
 
 });
 
-const _getAuthStatus = async () => {
+const getAuthStatus = async () => {
     
     await awaitFB;
 
@@ -97,7 +97,7 @@ const awaitFBAuth = async () => {
 
     await awaitFB;
 
-    const authStatus = await _getAuthStatus();
+    const authStatus = await getAuthStatus();
     const isAuthenticated = checkAuthentication(authStatus);
 
     if (isAuthenticated) {
@@ -138,22 +138,28 @@ export const fbAPI = async (query) => {
 };
 
 // TODO: do this with RxJX
-export const streamAuthStatus = async (callback) => {
+export const streamAuthStatus = async (onLogin, onLogout) => {
     
     await awaitFB;
 
     const _callback = function(authStatus) {
+        
+        if (authStatus.status) {
 
-        const isAuthenticated = authStatus.status;
+            const isAuthenticated = checkAuthentication(authStatus);
 
-        callback(isAuthenticated);
+            if (isAuthenticated) {
+                onLogin();
+            } else {
+                onLogout();
+            }
+        }
 
     }
 
     FB.Event.subscribe("auth.statusChange", _callback);
 
-    const authStatus = await _getAuthStatus();
-    
+    const authStatus = await getAuthStatus();    
     _callback(authStatus);
 
 }
