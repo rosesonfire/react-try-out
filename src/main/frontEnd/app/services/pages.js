@@ -2,7 +2,7 @@
 
 import registeredPages from "./../../registry/pages";
 
-const _fetchPages = async () => {
+export const fetchPages = async () => {
     
     const authKey = await window.getAuthKey();    
     const response = await fetch("/service/pages", {
@@ -21,9 +21,4 @@ const _fetchPages = async () => {
 
     return pages;
 
-};
-
-export const fetchPages = {
-    type: "FETCH_PAGES",
-    payload: _fetchPages()
 };

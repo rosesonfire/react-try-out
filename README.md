@@ -49,12 +49,13 @@ All the necessary configurations like back end server, front end server, databas
             1. [MigrationHelper](src/main/db/migrationHelper.js) - contains helper functionality for migration.
         1. [frontEnd](src/main/frontEnd) - contains the front end code.
             1. [app](src/main/frontEnd/app) - contains the react application.
+                1. [actions](src/main/frontEnd/app/actions) - contains the redux actions.
                 1. [components](src/main/frontEnd/app/components) - contains the react components.
-                    1. [actions](src/main/frontEnd/app/actions) - contains the redux actions.
                     1. [App](src/main/frontEnd/app/components/app.js) - react entry component.
-                    1. [middlewares](src/main/frontEnd/app/middlewares) - contains the custom redux middlewares.
                     1. [pages](src/main/frontEnd/app/components/pages) - contains the client side routed pages.
-                    1. [reducers](src/main/frontEnd/app/reducers) - contains the redux reducers.
+                1. [middlewares](src/main/frontEnd/app/middlewares) - contains the custom redux middlewares.
+                1. [reducers](src/main/frontEnd/app/reducers) - contains the redux reducers.
+                1. [services](src/main/frontEnd/app/services) - contains the async services.
                 1. [template.html](src/main/frontEnd/app/template.html) - landing template for react application.
             1. [img](src/main/frontEnd/img) - folder for storing custom images.
             1. [index.js](src/main/frontEnd/index.js) - the code that is run by webpack dev server for starting the front end server.

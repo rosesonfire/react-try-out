@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import reduxPromise from "redux-promise-middleware";
 import reduxLogger from "redux-logger";
+import reduxThunk from 'redux-thunk';
 import { Provider } from "react-redux";
 import App from "./app/components/app";
 import { frontEndConfig } from "./../config";
@@ -16,6 +17,7 @@ import authMiddleware from "./app/middlewares/auth";
 function createReduxStore() {
 
     const middlewares = applyMiddleware(
+        reduxThunk,
         authMiddleware,
         reduxLogger,
         reduxPromise());

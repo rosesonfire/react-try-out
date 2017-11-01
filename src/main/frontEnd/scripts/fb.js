@@ -123,7 +123,7 @@ export const fbAPI = async (query) => {
 
     await awaitFBAuth();
 
-    const _fbAPI = await new Promise((success, failure) => {
+    const response = await new Promise((success, failure) => {
         
         try {
             FB.api(query, success);
@@ -133,7 +133,7 @@ export const fbAPI = async (query) => {
 
     });
 
-    return _fbAPI;
+    return response;
 
 };
 

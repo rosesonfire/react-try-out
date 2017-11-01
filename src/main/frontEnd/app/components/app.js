@@ -4,8 +4,6 @@ import React, { Component } from "react";
 import { HashRouter, Link, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { login, logout } from "./../actions/auth";
-import { fetchPages } from "./../actions/pages";
-import { fetchUserData } from "./../actions/fb";
 
 @connect(store => {
 
@@ -18,8 +16,6 @@ import { fetchUserData } from "./../actions/fb";
 
     const onLogin = () => {
         dispatch(login);
-        dispatch(fetchPages);
-        dispatch(fetchUserData);
     };
 
     const onLogout = () => {

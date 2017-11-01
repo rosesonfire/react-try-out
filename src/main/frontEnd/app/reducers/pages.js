@@ -1,12 +1,20 @@
 "use strict";
 
-export default (state={}, action) => {
+const init = {
+    pages: []
+};
+
+export default (state=init, action) => {
     
+    const payload = action.payload;
+
     switch(action.type) {
-        case "FETCH_PAGES_FULFILLED": state = {
+        case "LOG_IN_FULFILLED": state = {
             ...state,
-            pages: action.payload
-        }
+            pages: payload.pages
+        };
+        break;
+        case "LOG_OUT": state = init;
         break;
     }
 
