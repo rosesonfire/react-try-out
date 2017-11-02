@@ -13,28 +13,14 @@
 1. **start-servers-and-watchers** - runs **start-back-end**, **start-front-end** and **build-with-watch**.
 1. **start** - runs **clean-build**, then **start-servers-and-watchers**.
 # Dependencies
-1. **babel-cli** - for transpiling es6 code.
-1. **babel-loader** - for transpiling jsx and es6 in webpack.
-1. **babel-plugin-transform-decorators-legacy** - babel plugin for compiling es7 decorators.
-1. **babel-plugin-transform-object-rest-spread** - babel plugin for destructuring json.
-1. **babel-preset-env** - for transpiling es6 code.
-1. **babel-preset-es2015** - for transpiling es6 code.
-1. **babel-preset-react** - for transpiling jsx.
 1. **body-parser** - for parsing post request body.
 1. **colors** - for adding colors to console logs.
-1. **css-loader** - css loader for webpack.
 1. **electrolyte** - for managing inversion of control and dependency injection.
 1. **express** - node web framework for developing the backend.
-1. **extract-text-webpack-plugin** - plugin for webpack to create separate bundled css file.
-1. **html-webpack-exclude-assets-plugin** - plugin for webpack to exclude static files from being injected into html file.
-1. **html-webpack-plugin** - for injecting webpack bundles into html file.
 1. **migrate-mongoose** - framework for handling mongo db migrations.
 1. **mongodb** - for accessing mongoDB.
 1. **mongoose** - ORM framework for mongoDB.
 1. **node** - node core.
-1. **node-sass** - for compile sass files.
-1. **nodemon** - for detecting changes in dist folder and auto-restarting server.
-1. **on-build-webpack** - to run scripts after every webpack build.
 1. **passport** - for authentication.
 1. **passport-accesstoken** - authentication strategy for passport.
 1. **react** - react core.
@@ -48,10 +34,16 @@
 1. **redux-logger** - redux middleware for logging actions.
 1. **redux-promise-middleware** - redux middleware for processing promises as payloads.
 1. **redux-thunk** - redux middleware for processing functions as actions.
-1. **sass-loader** - for bundling scss in webpack.
-1. **webpack** - bundle static files and react files.
-1. **webpack-dev-server** - for serving static files after bundling with webpack.
+# Dev-Dependencies
+1. **babel-cli** - for transpiling es6 code.
 1. **babel-eslint** - for eslint.
+1. **babel-loader** - for transpiling jsx and es6 in webpack.
+1. **babel-plugin-transform-decorators-legacy** - babel plugin for compiling es7 decorators.
+1. **babel-plugin-transform-object-rest-spread** - babel plugin for destructuring json.
+1. **babel-preset-env** - for transpiling es6 code.
+1. **babel-preset-es2015** - for transpiling es6 code.
+1. **babel-preset-react** - for transpiling jsx.
+1. **css-loader** - css loader for webpack.
 1. **eslint** - for eslint.
 1. **eslint-config-standard** - for eslint.
 1. **eslint-plugin-import** - for eslint.
@@ -59,3 +51,12 @@
 1. **eslint-plugin-promise** - for eslint.
 1. **eslint-plugin-react** - for eslint.
 1. **eslint-plugin-standard** - for eslint.
+1. **extract-text-webpack-plugin** - plugin for webpack to create separate bundled css file.
+1. **html-webpack-exclude-assets-plugin** - plugin for webpack to exclude static files from being injected into html file.
+1. **html-webpack-plugin** - for injecting webpack bundles into html file.
+1. **node-sass** - for compile sass files.
+1. **nodemon** - for detecting changes in dist folder and auto-restarting server.
+1. **on-build-webpack** - to run scripts after every webpack build.
+1. **sass-loader** - for bundling scss in webpack.
+1. **webpack** - bundle static files and react files.
+1. **webpack-dev-server** - for serving static files after bundling with webpack.
