@@ -3,7 +3,7 @@ import IoC from "electrolyte";
 
 // === initialize inversion of control framework ===
 
-IoC.use(IoC.dir("dist/main/backEnd/ioc"));
+IoC.use(IoC.dir("dist/backEnd/main/ioc"));
 
 // ========= Console log colorization ==============
 

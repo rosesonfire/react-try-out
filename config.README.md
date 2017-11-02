@@ -1,4 +1,4 @@
-# Configurations are declared in _src/main/config_
+# Configurations are declared in _src/config_
 1. **backEnd** - back end application configuration
     1. **host** - back end server host
     1. **port** - back end server port

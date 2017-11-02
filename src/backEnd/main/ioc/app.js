@@ -1,6 +1,6 @@
 import express from "express";
 import expressWrapper from "./../lib/expressWrapper";
-import { backEndConfig } from "./../../config";
+import { backEndConfig } from "./../../../config";
 
 exports = module.exports = (middlewares, router) => {
 

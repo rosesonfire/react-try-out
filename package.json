@@ -6,12 +6,12 @@
   "config": {
     "src_dir": "src",
     "prod_dir": "dist",
-    "back_end_dir": "dist/main/backEnd",
-    "front_end_dir": "dist/main/frontEnd",
-    "db_dir": "dist/main/db",
-    "src_db_dir": "src/main/db",
-    "migrate_mongoose_config": "dist/main/db/migrate.conf.js",
-    "webpack_config": "dist/main/frontEnd/webpack.config.js"
+    "back_end_dir": "dist/backEnd/main",
+    "front_end_dir": "dist/frontEnd/main",
+    "db_dir": "dist/db",
+    "src_db_dir": "src/db",
+    "migrate_mongoose_config": "dist/db/migrate.conf.js",
+    "webpack_config": "dist/frontEnd/main/webpack.config.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

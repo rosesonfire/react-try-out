@@ -3,8 +3,9 @@ import WebpackOnBuildPlugin from "on-build-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackExcludeAssetsPlugin from "html-webpack-exclude-assets-plugin";
 import { exec } from "child_process";
-import { backEndConfig, frontEndConfig } from "./../config";
+import { backEndConfig, frontEndConfig } from "./../../config";
 
+const template = "./app/template.html";
 const scripts = "./scripts/script.js";
 const styles = "./styles/style.scss";
 const app = "./index.js";
@@ -44,7 +45,7 @@ module.exports = {
     new ExtractTextPlugin("[name].min.css"),
     new HtmlWebpackPlugin({
       hash: true,
-      template: "./app/template.html",
+      template: template,
       excludeAssets: [/styles.*js/],
       // eslint-disable-next-line no-unused-vars
       chunksSortMode: (a, b) => {

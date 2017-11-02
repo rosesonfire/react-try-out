@@ -1,4 +1,4 @@
-import pageSchema from "./../../../dataAccess/schemas/page";
+import pageSchema from "./../../../../dataAccess/schemas/page";
 
 export default (db) => {
 

@@ -5,7 +5,7 @@
 `npm run start`
 ## Notes
 - Servers will automatically reload on changes.
-- Browsers will automatically reload on changes in [frontEnd](src/main/frontEnd) folder.
+- Browsers will automatically reload on changes in [frontEnd](src/frontEnd/main) folder.
 - Code inside [dist](dist) are auto-generated, **DO NOT** make any change in it.
 - Edit code inside [src](src) for development purpose.
 - Database used is **mongoDB**.
@@ -28,43 +28,45 @@ All the necessary configurations like back end server, front end server, databas
 1. [package.json.README.md](package.json.README.md) - describes the dependencies and scripts in package.json.
 1. [README.md](README.md) - this file, contains necessary documentations.
 1. [src](src) - the folder that contains the development code. Edit files in this folder for development purpose.
-    1. [main](src/main) - the dev code.
-        1. [backEnd](src/main/backEnd) - contains the back end code.
-            1. [app](src/main/backEnd/app) - contains the mvc application.
-                1. [controllers](src/main/backEnd/app/controllers) - contains the mvc controllers.
-                1. [services](src/main/backEnd/app/services) - contains the business logic.
-            1. [config](src/main/backEnd/config) - configurations of the back-end app like routers, middlewares, etc.
-                1. [Middlewares](src/main/backEnd/config/middlewares.js) - contains the middleware configurations.
-                1. [Router](src/main/backEnd/config/router.js) - HTTP router.
-            1. [index.js](src/main/backEnd/index.js) - the code that is run by nodemon for starting the back end server.
-            1. [ioc](src/main/backEnd/ioc) - contains inversion of control configurations.
-            1. [lib](src/main/backEnd/lib) - contains customized libraries.
-        1. [config](src/main/config) - contains different configurations.
-            1. [dev.conf.js](src/main/config/dev.conf.js) - configuration file for **devlopment mode**.
-            1. [index.js](src/main/config/index.js) - configuration resolved based on **mode**.
-            1. [prod.conf.js](src/main/config/prod.conf.js) - configuration file **production mode**.
-        1. [dataAccess](src/main/dataAccess) - contains the database schemas.
-        1. [db](src/main/db) - contains the database migration configurations.
-            1. [migrations](src/main/db/migrations) - contains the database migration files.
-            1. [migrate.conf.js](src/main/db/migrate.conf.js) - contains the database migration configurations.
-            1. [MigrationHelper](src/main/db/migrationHelper.js) - contains helper functionality for migration.
-        1. [frontEnd](src/main/frontEnd) - contains the front end code.
-            1. [app](src/main/frontEnd/app) - contains the react application.
-                1. [actions](src/main/frontEnd/app/actions) - contains the redux actions.
-                1. [components](src/main/frontEnd/app/components) - contains the react components.
-                    1. [App](src/main/frontEnd/app/components/app.js) - react entry component.
-                    1. [pages](src/main/frontEnd/app/components/pages) - contains the client side routed pages.
-                1. [middlewares](src/main/frontEnd/app/middlewares) - contains the custom redux middlewares.
-                1. [reducers](src/main/frontEnd/app/reducers) - contains the redux reducers.
-                1. [services](src/main/frontEnd/app/services) - contains the async services.
-                1. [template.html](src/main/frontEnd/app/template.html) - landing template for react application.
-            1. [img](src/main/frontEnd/img) - folder for storing custom images.
-            1. [index.js](src/main/frontEnd/index.js) - the code that is run by webpack dev server for starting the front end server.
-            1. [registry](src/main/frontEnd/registry) - contain registered stuff (needs to be improved).
-            1. [scripts](src/main/frontEnd/scripts) - folder for storing custom js.
-            1. [styles](src/main/frontEnd/styles) - folder for storing custom css.
-            1. [webpack.config.js](src/main/frontEnd/webpack.config.js) - contains the webpack configurations.
-    1. [test](src/test) - the test code.
+    1. [backEnd](src/backEnd) - contains the back end code.
+        1. [main](src/backEnd/main) - the back end dev code.
+            1. [app](src/backEnd/main/app) - contains the mvc application.
+                1. [controllers](src/backEnd/main/app/controllers) - contains the mvc controllers.
+                1. [services](src/backEnd/main/app/services) - contains the business logic.
+            1. [config](src/backEnd/main/config) - configurations of the back-end app like routers, middlewares, etc.
+                1. [Middlewares](src/backEnd/main/config/middlewares.js) - contains the middleware configurations.
+                1. [Router](src/backEnd/main/config/router.js) - HTTP router.
+            1. [index.js](src/backEnd/main/index.js) - the code that is run by nodemon for starting the back end server.
+            1. [ioc](src/backEnd/main/ioc) - contains inversion of control configurations.
+            1. [lib](src/backEnd/main/lib) - contains customized libraries.
+        1. [test](src/backEnd/test) - the back end tests
+    1. [config](src/config) - contains different configurations.
+        1. [dev.conf.js](src/config/dev.conf.js) - configuration file for **devlopment mode**.
+        1. [index.js](src/config/index.js) - configuration resolved based on **mode**.
+        1. [prod.conf.js](src/config/prod.conf.js) - configuration file **production mode**.
+    1. [dataAccess](src/dataAccess) - contains the database schemas.
+    1. [db](src/db) - contains the database migration configurations.
+        1. [migrations](src/db/migrations) - contains the database migration files.
+        1. [migrate.conf.js](src/db/migrate.conf.js) - contains the database migration configurations.
+        1. [MigrationHelper](src/db/migrationHelper.js) - contains helper functionality for migration.
+    1. [frontEnd](src/frontEnd) - contains the front end code.
+        1. [main](src/frontEnd/main) - the front end dev code.
+            1. [app](src/frontEnd/main/app) - contains the react application.
+                1. [actions](src/frontEnd/main/app/actions) - contains the redux actions.
+                1. [components](src/frontEnd/main/app/components) - contains the react components.
+                    1. [App](src/frontEnd/main/app/components/app.js) - react entry component.
+                    1. [pages](src/frontEnd/main/app/components/pages) - contains the client side routed pages.
+                1. [middlewares](src/frontEnd/main/app/middlewares) - contains the custom redux middlewares.
+                1. [reducers](src/frontEnd/main/app/reducers) - contains the redux reducers.
+                1. [services](src/frontEnd/main/app/services) - contains the async services.
+                1. [template.html](src/frontEnd/main/app/template.html) - landing template for react application.
+            1. [img](src/frontEnd/main/img) - folder for storing custom images.
+            1. [index.js](src/frontEnd/main/index.js) - the code that is run by webpack dev server for starting the front end server.
+            1. [registry](src/frontEnd/main/registry) - contain registered stuff (needs to be improved).
+            1. [scripts](src/frontEnd/main/scripts) - folder for storing custom js.
+            1. [styles](src/frontEnd/main/styles) - folder for storing custom css.
+            1. [webpack.config.js](src/frontEnd/main/webpack.config.js) - contains the webpack configurations.
+        1. [test](src/frontEnd/test) - the front end tests
 1. [tsconfig.json](tsconfig.json) - type script configuration. Needed for decorators in vscode.
 ## Generated folders and files
 1. [dist](dist) - the folder in which the es6 code is transpiled into and the servers runs on.
