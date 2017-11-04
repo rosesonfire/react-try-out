@@ -12,8 +12,9 @@
     "src_db_dir": "src/db",
     "migrate_mongoose_config": "dist/db/migrate.conf.js",
     "webpack_config": "dist/frontEnd/main/webpack.config.js",
-    "back_end_test_dir": "dist/backEnd/test/**/*.spec.js",
-    "front_end_test_dir": "dist/frontEnd/test/**/*.spec.js"
+    "back_end_test_files": "dist/backEnd/test/**/*.spec.js",
+    "front_end_test_files": "dist/frontEnd/test/**/*.spec.js",
+    "test_files": "dist/**/*.spec.js"
   },
   "scripts": {
     "clean": "rm -rf $npm_package_config_prod_dir && mkdir $npm_package_config_prod_dir",
@@ -29,9 +30,10 @@
     "start-front-end": "webpack-dev-server --watch --config $npm_package_config_webpack_config --context $npm_package_config_front_end_dir",
     "start-servers-and-watchers": "npm run start-back-end & npm run start-front-end & npm run build-with-watch",
     "start": "npm run clean-build && npm run start-servers-and-watchers",
-    "test-back-end": "mocha $npm_package_config_back_end_test_dir",
-    "test-front-end": "mocha $npm_package_config_front_end_test_dir",
-    "test": "npm run clean-build && npm run test-back-end && npm run test-front-end"
+    "test-back-end": "mocha $npm_package_config_back_end_test_files",
+    "test-front-end": "mocha $npm_package_config_front_end_test_files",
+    "test": "npm run clean-build && npm run test-back-end && npm run test-front-end",
+    "test-cover": "npm run clean-build && nyc --reporter=html mocha $npm_package_config_test_files"
   },
   "author": "Ishtiaque Khan",
   "license": "ISC",
@@ -85,6 +87,7 @@
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
+    "nyc": "^11.3.0",
     "on-build-webpack": "^0.1.0",
     "sass-loader": "^6.0.6",
     "webpack": "^3.6.0",

@@ -12,9 +12,10 @@
 1. **start-front-endr** - starts webpack dev server, then starts a watcher to detect changes in _dist/frontEnd_ folder and re-starts webpack dev server every time a change is detected.
 1. **start-servers-and-watchers** - runs **start-back-end**, **start-front-end** and **build-with-watch**.
 1. **start** - runs **clean-build**, then **start-servers-and-watchers**.
-1. **test-back-end** - runs front end tests
-1. **test-front-end** - runs back end tests
+1. **test-back-end** - runs front end tests with mocha.
+1. **test-front-end** - runs back end tests with moca.
 1. **test** - runs **clean-build**, then **test-back-end**, then **test-front-end**.
+1. **test-cover** - runs **clean-build**, then runs runs Istanbul with mocha to generate test coverage.
 # Dependencies
 1. **body-parser** - for parsing post request body.
 1. **chai** - assertion framework for mocha.
@@ -64,6 +65,7 @@
 1. **html-webpack-plugin** - for injecting webpack bundles into html file.
 1. **node-sass** - for compile sass files.
 1. **nodemon** - for detecting changes in dist folder and auto-restarting server.
+1. **nyc** - cli for the test coverage framework Istanbul.
 1. **on-build-webpack** - to run scripts after every webpack build.
 1. **sass-loader** - for bundling scss in webpack.
 1. **webpack** - bundle static files and react files.
