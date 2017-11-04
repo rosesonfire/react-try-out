@@ -3,6 +3,9 @@
 [https://trello.com/b/5ugkxmBt/react-test](https://trello.com/b/5ugkxmBt/react-test)
 ## To start application
 `npm run start`
+## To test application
+`npm run test`
+This will also generate reports under[coverage](coverage)
 ## Notes
 - Servers will automatically reload on changes.
 - Browsers will automatically reload on changes in [frontEnd](src/frontEnd/main) folder.
