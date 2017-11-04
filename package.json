@@ -11,10 +11,11 @@
     "db_dir": "dist/db",
     "src_db_dir": "src/db",
     "migrate_mongoose_config": "dist/db/migrate.conf.js",
-    "webpack_config": "dist/frontEnd/main/webpack.config.js"
+    "webpack_config": "dist/frontEnd/main/webpack.config.js",
+    "back_end_test_dir": "dist/backEnd/test/**/*.spec.js",
+    "front_end_test_dir": "dist/frontEnd/test/**/*.spec.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf $npm_package_config_prod_dir && mkdir $npm_package_config_prod_dir",
     "build": "babel $npm_package_config_src_dir -d $npm_package_config_prod_dir --copy-files",
     "clean-build": "npm run clean && npm run build",
@@ -27,16 +28,23 @@
     "start-back-end": "nodemon --watch $npm_package_config_back_end_dir $npm_package_config_back_end_dir",
     "start-front-end": "webpack-dev-server --watch --config $npm_package_config_webpack_config --context $npm_package_config_front_end_dir",
     "start-servers-and-watchers": "npm run start-back-end & npm run start-front-end & npm run build-with-watch",
-    "start": "npm run clean-build && npm run start-servers-and-watchers"
+    "start": "npm run clean-build && npm run start-servers-and-watchers",
+    "test-back-end": "mocha $npm_package_config_back_end_test_dir",
+    "test-front-end": "mocha $npm_package_config_front_end_test_dir",
+    "test": "npm run clean-build && npm run test-back-end && npm run test-front-end"
   },
   "author": "Ishtiaque Khan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-arrays": "^2.0.0",
+    "chai-as-promised": "^7.1.1",
     "colors": "^1.1.2",
     "electrolyte": "^0.5.0",
     "express": "^4.16.2",
     "migrate-mongoose": "^3.2.2",
+    "mocha": "^4.0.1",
     "mongodb": "^2.2.31",
     "mongoose": "^4.12.1",
     "node": "^8.3.0",
@@ -52,7 +60,8 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "sinon": "^4.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

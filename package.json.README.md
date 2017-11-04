@@ -12,12 +12,19 @@
 1. **start-front-endr** - starts webpack dev server, then starts a watcher to detect changes in _dist/frontEnd_ folder and re-starts webpack dev server every time a change is detected.
 1. **start-servers-and-watchers** - runs **start-back-end**, **start-front-end** and **build-with-watch**.
 1. **start** - runs **clean-build**, then **start-servers-and-watchers**.
+1. **test-back-end** - runs front end tests
+1. **test-front-end** - runs back end tests
+1. **test** - runs **clean-build**, then **test-back-end**, then **test-front-end**.
 # Dependencies
 1. **body-parser** - for parsing post request body.
+1. **chai** - assertion framework for mocha.
+1. **chai-arrays** - chai extension for assertion on arrays.
+1. **chai-as-promised** - chai extension for assertion on promises.
 1. **colors** - for adding colors to console logs.
 1. **electrolyte** - for managing inversion of control and dependency injection.
 1. **express** - node web framework for developing the backend.
 1. **migrate-mongoose** - framework for handling mongo db migrations.
+1. **mocha** - testing framework.
 1. **mongodb** - for accessing mongoDB.
 1. **mongoose** - ORM framework for mongoDB.
 1. **node** - node core.
@@ -25,7 +32,7 @@
 1. **passport-accesstoken** - authentication strategy for passport.
 1. **react** - react core.
 1. **react-addons-css-transition-group** - for styling infinite calendar.
-1. **react-bootstrap** - react components for bootstrap
+1. **react-bootstrap** - react components for bootstrap.
 1. **react-dom** - for rendering react components into HTML.
 1. **react-infinite-calendar** - react component for calendar.
 1. **react-redux** - for managing state of react components.
@@ -34,6 +41,7 @@
 1. **redux-logger** - redux middleware for logging actions.
 1. **redux-promise-middleware** - redux middleware for processing promises as payloads.
 1. **redux-thunk** - redux middleware for processing functions as actions.
+1. **sinon** - mocking framework for mocha.
 # Dev-Dependencies
 1. **babel-cli** - for transpiling es6 code.
 1. **babel-eslint** - for eslint.
