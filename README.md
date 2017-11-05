@@ -17,7 +17,7 @@ This will also generate html test coverage reports under [coverage](coverage).
 - **Production mode** - set `NODE_ENV` to `production`.
 ## Configuration files
 All the necessary configurations like back end server, front end server, database, etc are stored in the [configuration folder](src/main/config). A [README](config.README.md) is available for it.
-## Database migraiton
+## Database migration
 - To create a new migration run `npm run create-migration <name>`. This will create a new migration in [src/main/db/migrations](src/main/db/migrations) with the given _name_.
 - To migrate up run `npm run migrate`. This will migrate up all the migrations into the database.
 - To migrate down run `npm run migrate down <name>`. This will migrate down the migration with the given name from the database.

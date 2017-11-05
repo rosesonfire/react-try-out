@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 
-import chai from "chai";
-import chaiAsPromised from "chai-as-promised";
-import assertArrays from "chai-arrays";
+import { expect } from "./../../setup";
 // mocks
 import pageService from "../../mocks/services/pagesService";
 import req from "./../../mocks/req";
@@ -10,33 +8,39 @@ import res from "./../../mocks/res";
 // unit
 import PageController from "./../../../main/app/controllers/pagesController";
 
-chai.should();
-chai.use(chaiAsPromised);
-chai.use(assertArrays);
+describe("PageController", () => {
 
-describe("PageController", async () => {
+  let pageIds;
+  let pageController;
 
-  const pageIds = [1,2,3];
-  pageService.getPageIds.returns(pageIds);
+  before(() => {
+
+    pageIds = [1,2,3];
+
+    pageService.getPageIds.returns(pageIds);    
+
+    pageController = new PageController(pageService);
+
+  });
+
+  beforeEach(() => {
+
+    res.send.reset();
+    
+  });
+
+  describe("When getting page ids", () => {
+
+    it("should return nothing", async () => {
   
-  const pageController = new PageController(pageService);
-
-  describe("When getting page ids", async () => {
-
-    it("should return nothing", (done) => {
-  
-      pageController.getPageIds(req, res).should.eventually.be.undefined.notify(done);
+      expect(await pageController.getPageIds(req, res)).to.be.undefined;
         
     });
   
-    it("should get the pages ids successfully", (done) => {
+    it("should get the correct pages ids", async () => {
       
-      res.send.callsFake((_pageIds) => {
-        _pageIds.should.be.equalTo(pageIds);
-        done();
-      });
-  
-      pageController.getPageIds(req, res);
+      res.send.withExactArgs(pageIds);  
+      await pageController.getPageIds(req, res);
         
     });
   });

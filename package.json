@@ -14,10 +14,12 @@
     "webpack_config": "dist/frontEnd/main/webpack.config.js",
     "back_end_test_files": "dist/backEnd/test/**/*.spec.js",
     "front_end_test_files": "dist/frontEnd/test/**/*.spec.js",
-    "test_files": "dist/**/*.spec.js"
+    "test_files": "dist/**/*.spec.js",
+    "back_end_coverage_dir": "coverage/backEnd",
+    "front_end_coverage_dir": "coverage/frontEnd"
   },
   "scripts": {
-    "clean": "rm -rf $npm_package_config_prod_dir && mkdir $npm_package_config_prod_dir",
+    "clean": "rm -rf $npm_package_config_back_end_coverage_dir && rm -rf $npm_package_config_front_end_coverage_dir && rm -rf $npm_package_config_prod_dir && mkdir $npm_package_config_prod_dir",
     "build": "babel $npm_package_config_src_dir -d $npm_package_config_prod_dir --copy-files",
     "clean-build": "npm run clean && npm run build",
     "build-with-watch": "babel $npm_package_config_src_dir --watch -d $npm_package_config_prod_dir --copy-files",
@@ -30,10 +32,9 @@
     "start-front-end": "webpack-dev-server --watch --config $npm_package_config_webpack_config --context $npm_package_config_front_end_dir",
     "start-servers-and-watchers": "npm run start-back-end & npm run start-front-end & npm run build-with-watch",
     "start": "npm run clean-build && npm run start-servers-and-watchers",
-    "test-back-end": "mocha $npm_package_config_back_end_test_files",
-    "test-front-end": "mocha $npm_package_config_front_end_test_files",
-    "test": "npm run clean-build && npm run test-back-end && npm run test-front-end",
-    "test-cover": "npm run clean-build && nyc --reporter=html mocha $npm_package_config_test_files"
+    "test-cover-back-end": "nyc --reporter=html --report-dir=$npm_package_config_back_end_coverage_dir mocha $npm_package_config_back_end_test_files",
+    "test-cover-front-end": "nyc --reporter=html --report-dir=$npm_package_config_front_end_coverage_dir mocha $npm_package_config_front_end_test_files",
+    "test-cover": "npm run clean-build && npm run test-cover-back-end && npm run test-cover-front-end"
   },
   "author": "Ishtiaque Khan",
   "license": "ISC",
@@ -41,7 +42,6 @@
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "chai-arrays": "^2.0.0",
-    "chai-as-promised": "^7.1.1",
     "colors": "^1.1.2",
     "electrolyte": "^0.5.0",
     "express": "^4.16.2",

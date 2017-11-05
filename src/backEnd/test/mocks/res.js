@@ -1,5 +1,5 @@
 import sinon from "sinon";
 
 export default {
-  send: sinon.stub()
+  send: sinon.mock()
 };
