@@ -1,4 +1,5 @@
 import user from "./../../../app/models/user";
+import userSchema from "./../../../../../dataAccess/schemas/user";
 
 exports = module.exports = (db) => {
 
@@ -6,7 +7,7 @@ exports = module.exports = (db) => {
   
   try {
 
-    User = user(db);
+    User = user(db, userSchema);
 
   } catch (e) {
   
