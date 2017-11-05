@@ -2,13 +2,13 @@
 
 import { expect } from "./../../setup";
 // mocks
-import pageService from "../../mocks/services/pagesService";
-import req from "./../../mocks/req";
-import res from "./../../mocks/res";
+import pageService from "../../mocks/app/services/pagesService";
+import req from "./../../mocks/others/express/req";
+import res from "./../../mocks/others/express/res";
 // unit
 import PageController from "./../../../main/app/controllers/pagesController";
 
-describe("PageController", () => {
+describe("Page Controller", () => {
 
   let pageIds;
   let pageController;
@@ -39,7 +39,8 @@ describe("PageController", () => {
   
     it("should get the correct pages ids", async () => {
       
-      res.send.withExactArgs(pageIds);  
+      res.send.withExactArgs(pageIds);
+      
       await pageController.getPageIds(req, res);
         
     });

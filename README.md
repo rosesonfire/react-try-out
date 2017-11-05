@@ -5,7 +5,7 @@
 `npm run start`
 ## To test application
 `npm run test`<br />
-This will also generate html test coverage reports under [coverage](coverage).
+This will also generate html test coverage reports under [coverage](coverage) and open the reports on browser.
 ## Notes
 - Servers will automatically reload on changes.
 - Browsers will automatically reload on changes in [frontEnd](src/frontEnd/main) folder.
