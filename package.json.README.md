@@ -14,7 +14,8 @@
 1. **start** - runs **clean-build**, then **start-servers-and-watchers**.
 1. **test-back-end** - runs Istanbul with mocha on back end to generate test coverage report, then opens the report on browser.
 1. **test-front-end** - runs Istanbul with mocha on front end to generate test coverage report, then opens the report on browser.
-1. **test** - runs **clean-build**, then **test-back-end**, then **test-front-end**.
+1. **test-both-ends** - runs **test-back-end**, and **test-front-end**.
+1. **test** - runs **clean-build**, then **test-both-ends**.
 # Dependencies
 1. **body-parser** - for parsing post request body.
 1. **chai** - assertion framework for mocha.

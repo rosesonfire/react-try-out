@@ -6,9 +6,10 @@ export default class PagesService {
 
   }
 
-  getPageIds() {
+  async getPageIds() {
 
-    const pageIds = this.Page.find().then(pages => pages.map(page => page.id));
+    const pages = await this.Page.find();
+    const pageIds = pages.map(page => page.id);
 
     return pageIds;
 

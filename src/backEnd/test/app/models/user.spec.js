@@ -21,15 +21,20 @@ describe("User Model", () => {
   beforeEach(() => {
 
     db.model.reset();
+
+    db.model.once().withExactArgs("user", userSchema).returns(userModel);
+    
+  });
+
+  afterEach(() => {
+    
+    db.model.verify();
     
   });
 
   describe("When getting user model", () => {
 
     it("should return user model", () => {
-  
-      db.model.withExactArgs("user", userSchema);
-      db.model.returns(userModel);
       
       user(db, userSchema).should.equal(userModel);
         

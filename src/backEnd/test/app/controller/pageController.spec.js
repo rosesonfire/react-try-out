@@ -17,15 +17,24 @@ describe("Page Controller", () => {
 
     pageIds = [1,2,3];
 
-    pageService.getPageIds.returns(pageIds);    
-
     pageController = new PageController(pageService);
 
   });
 
   beforeEach(() => {
 
+    pageService.getPageIds.reset();
     res.send.reset();
+
+    pageService.getPageIds.once().withExactArgs().resolves(pageIds);
+    res.send.once().withExactArgs(pageIds);
+    
+  });
+
+  afterEach(() => {
+
+    pageService.getPageIds.verify();
+    res.send.verify();
     
   });
 
@@ -36,14 +45,7 @@ describe("Page Controller", () => {
       expect(await pageController.getPageIds(req, res)).to.be.undefined;
         
     });
-  
-    it("should get the correct pages ids", async () => {
-      
-      res.send.withExactArgs(pageIds);
-      
-      await pageController.getPageIds(req, res);
-        
-    });
+
   });
 
 });

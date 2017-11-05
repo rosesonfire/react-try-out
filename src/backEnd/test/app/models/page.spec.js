@@ -21,15 +21,20 @@ describe("Page Model", () => {
   beforeEach(() => {
 
     db.model.reset();
+
+    db.model.once().withExactArgs("page", pageSchema).returns(pageModel);
+    
+  });
+
+  afterEach(() => {
+    
+    db.model.verify();
     
   });
 
   describe("When getting page model", () => {
 
     it("should return page model", () => {
-  
-      db.model.withExactArgs("page", pageSchema);
-      db.model.returns(pageModel);
       
       page(db, pageSchema).should.equal(pageModel);
         
