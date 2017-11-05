@@ -4,7 +4,7 @@
 ## To start application
 `npm run start`
 ## To test application
-`npm run test-cover`<br />
+`npm run test`<br />
 This will also generate html test coverage reports under [coverage](coverage).
 ## Notes
 - Servers will automatically reload on changes.

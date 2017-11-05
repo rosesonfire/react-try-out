@@ -12,9 +12,9 @@
 1. **start-front-endr** - starts webpack dev server, then starts a watcher to detect changes in _dist/frontEnd_ folder and re-starts webpack dev server every time a change is detected.
 1. **start-servers-and-watchers** - runs **start-back-end**, **start-front-end** and **build-with-watch**.
 1. **start** - runs **clean-build**, then **start-servers-and-watchers**.
-1. **test-cover-back-end** - runs Istanbul with mocha on back end to generate test coverage.
-1. **test-cover-front-end** - runs Istanbul with mocha on front end to generate test coverage.
-1. **test-cover** - runs **clean-build**, then **test-cover-back-end**, then **test-cover-front-end**.
+1. **test-back-end** - runs Istanbul with mocha on back end to generate test coverage.
+1. **test-front-end** - runs Istanbul with mocha on front end to generate test coverage.
+1. **test** - runs **clean-build**, then **test-back-end**, then **test-front-end**.
 # Dependencies
 1. **body-parser** - for parsing post request body.
 1. **chai** - assertion framework for mocha.
