@@ -26,5 +26,5 @@ exports = module.exports = (User) => {
   
 };
 
-exports["@require"] = ["models/user"];
+exports["@require"] = ["app/models/user"];
 exports["@singleton"] = true;

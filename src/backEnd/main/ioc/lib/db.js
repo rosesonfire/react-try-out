@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import mongooseWrapper from "./../lib/mongooseWrapper";
-import { dbConfig } from "./../../../config";
+import mongooseWrapper from "./../../lib/mongooseWrapper";
+import { dbConfig } from "./../../../../config";
 
 exports = module.exports = () => {
 

@@ -1,4 +1,4 @@
-import PagesService from "./../../app/services/pagesService";
+import PagesService from "./../../../app/services/pagesService";
 
 exports = module.exports = (Page) => {
 
@@ -18,5 +18,5 @@ exports = module.exports = (Page) => {
   
 };
    
-exports["@require"] = ["models/page"];
+exports["@require"] = ["app/models/page"];
 exports["@singleton"] = true;

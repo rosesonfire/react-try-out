@@ -1,4 +1,5 @@
-import page from "./../../app/models/page";
+import page from "./../../../app/models/page";
+import pageSchema from "./../../../../../dataAccess/schemas/page";
 
 exports = module.exports = (db) => {
 
@@ -6,7 +7,7 @@ exports = module.exports = (db) => {
   
   try {
 
-    Page = page(db);
+    Page = page(db, pageSchema);
 
   } catch (e) {
   
@@ -18,5 +19,5 @@ exports = module.exports = (db) => {
   
 };
    
-exports["@require"] = ["db"];
+exports["@require"] = ["lib/db"];
 exports["@singleton"] = true;

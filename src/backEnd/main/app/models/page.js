@@ -1,6 +1,4 @@
-import pageSchema from "./../../../../dataAccess/schemas/page";
-
-export default (db) => {
+export default (db, pageSchema) => {
 
   return db.model("page", pageSchema);
 

@@ -1,9 +1,5 @@
 import colors from "colors";
-import IoC from "electrolyte";
-
-// === initialize inversion of control framework ===
-
-IoC.use(IoC.dir("dist/backEnd/main/ioc"));
+import { dependencies } from "./ioc";
 
 // ========= Console log colorization ==============
 
@@ -15,7 +11,7 @@ colors.setTheme({
 
 const initialize = async () => {
 
-  const app = await IoC.create("app");
+  const app = await dependencies.app;
   
   app.listen2(() => {}, () => {});
   

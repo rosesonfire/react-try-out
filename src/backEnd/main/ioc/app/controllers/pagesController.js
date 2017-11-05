@@ -1,4 +1,4 @@
-import PagesController from "./../../app/controllers/pagesController";
+import PagesController from "./../../../app/controllers/pagesController";
 
 exports = module.exports = (pagesService) => {
 
@@ -18,5 +18,5 @@ exports = module.exports = (pagesService) => {
   
 };
    
-exports["@require"] = ["services/pagesService"];
+exports["@require"] = ["app/services/pagesService"];
 exports["@singleton"] = true;

@@ -19,5 +19,5 @@ exports = module.exports = (pagesController) => {
   
 };
 
-exports["@require"] = ["controllers/pagesController"];
+exports["@require"] = ["app/controllers/pagesController"];
 exports["@singleton"] = true;

@@ -1,4 +1,4 @@
-import user from "./../../app/models/user";
+import user from "./../../../app/models/user";
 
 exports = module.exports = (db) => {
 
@@ -18,5 +18,5 @@ exports = module.exports = (db) => {
   
 };
    
-exports["@require"] = ["db"];
+exports["@require"] = ["lib/db"];
 exports["@singleton"] = true;
