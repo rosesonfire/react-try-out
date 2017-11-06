@@ -16,11 +16,13 @@
     "front_end_files": "dist/frontEnd/main/**/*",
     "back_end_test_files": "dist/backEnd/test/**/*",
     "front_end_test_files": "dist/frontEnd/test/**/*",
-    "test_files": "dist/**/*.spec.js",
     "back_end_coverage_dir": "coverage/backEnd",
     "front_end_coverage_dir": "coverage/frontEnd",
     "back_end_coverage": "coverage/backEnd/index.html",
-    "front_end_coverage": "coverage/frontEnd/index.html"
+    "front_end_coverage": "coverage/frontEnd/index.html",
+    "back_end_ioc_files": "dist/backEnd/main/ioc/**/*.js",
+    "back_end_index_file": "dist/backEnd/main/index.js",
+    "back_end_config_files": "dist/backEnd/main/config/**/*.js"
   },
   "scripts": {
     "clean": "rm -rf $npm_package_config_prod_dir && mkdir $npm_package_config_prod_dir",
@@ -36,7 +38,7 @@
     "start-front-end": "webpack-dev-server --watch --config $npm_package_config_webpack_config --context $npm_package_config_front_end_dir",
     "start-servers-and-watchers": "npm run start-back-end & npm run start-front-end & npm run build-with-watch",
     "start": "npm run clean-build && npm run start-servers-and-watchers",
-    "test-back-end": "nyc --reporter=html --report-dir=$npm_package_config_back_end_coverage_dir --all --include=$npm_package_config_back_end_files mocha $npm_package_config_back_end_test_files && sensible-browser $npm_package_config_back_end_coverage",
+    "test-back-end": "nyc --reporter=html --report-dir=$npm_package_config_back_end_coverage_dir --all --include=$npm_package_config_back_end_files --exclude=$npm_package_config_back_end_ioc_files --exclude=$npm_package_config_back_end_config_files --exclude=$npm_package_config_back_end_index_file mocha $npm_package_config_back_end_test_files && sensible-browser $npm_package_config_back_end_coverage",
     "test-front-end": "nyc --reporter=html --report-dir=$npm_package_config_front_end_coverage_dir --all --include=$npm_package_config_front_end_files mocha $npm_package_config_front_end_test_files && sensible-browser $npm_package_config_front_end_coverage",
     "test-both-ends": "npm run test-back-end & npm run test-front-end",
     "test": "npm run clean-build && npm run test-both-ends"
