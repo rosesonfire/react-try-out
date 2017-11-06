@@ -74,6 +74,8 @@ All the necessary configurations like back end server, front end server, databas
         1. [test](src/frontEnd/test) - the front end tests
 1. [tsconfig.json](tsconfig.json) - type script configuration. Needed for decorators in vscode.
 ## Generated folders and files
+1. [.nyc_output](.nyc_output) - the folder in which the test coverage data is saved in.
+1. [coverate](coverage) - the folder in which the test covergage reports are generated into.
 1. [dist](dist) - the folder in which the es6 code is transpiled into and the servers runs on.
 1. [node_modules](node_modules) - the folder in which the node modules are installed.
 1. [package-lock.json](package-lock.json) - the compiled npm package configuration file.
