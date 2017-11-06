@@ -11,8 +11,8 @@ This will also generate html test coverage reports under [coverage](coverage) an
 ## Notes
 - Servers will automatically reload on changes.
 - Browsers will automatically reload on changes in [frontEnd](src/frontEnd/main) folder.
-- Code inside [dist](dist) are auto-generated, **DO NOT** make any change in it.
-- Edit code inside [src](src) for development purpose.
+- Code inside [dist](dist) is auto-generated, **DO NOT** make any change in it.
+- Edit code inside [src](src) is for development purpose.
 - Database used is **mongoDB**.
 ## Mode
 - **Development mode** - set `NODE_ENV` to `development`.
