@@ -2,7 +2,7 @@
 
 import "./../setup";
 // mocks
-import express from "../mocks/others/express/express";
+import express from "../mocks/others/express";
 import middlewares from "./../mocks/config/middlewares";
 import router from "./../mocks/config/router";
 import app from "./../mocks/lib/app";

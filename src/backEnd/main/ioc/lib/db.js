@@ -8,7 +8,7 @@ exports = module.exports = () => {
 
   try {
 
-    db = mongooseWrapper(mongoose, dbConfig.host, dbConfig.dbName, dbConfig.port);
+    db = mongooseWrapper(mongoose, dbConfig.host, dbConfig.dbName, dbConfig.port, Promise);
 
   } catch (e) {
   

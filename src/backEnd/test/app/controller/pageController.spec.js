@@ -3,8 +3,7 @@
 import { expect } from "./../../setup";
 // mocks
 import pageService from "../../mocks/app/services/pagesService";
-import req from "./../../mocks/others/express/req";
-import res from "./../../mocks/others/express/res";
+import { req, res } from "./../../mocks/others/express";
 // unit
 import PageController from "./../../../main/app/controllers/pagesController";
 
