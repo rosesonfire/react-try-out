@@ -1,6 +1,8 @@
 # react-try-out
 ## Trello
 [https://trello.com/b/5ugkxmBt/react-test](https://trello.com/b/5ugkxmBt/react-test)
+## First time installation
+`npm install`
 ## To start application
 `npm run start`
 ## To test application
