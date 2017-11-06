@@ -12,6 +12,7 @@ describe("Page Controller", () => {
 
   let pageIds;
   let pageController;
+  let mocks;
 
   before(() => {
 
@@ -19,12 +20,14 @@ describe("Page Controller", () => {
 
     pageController = new PageController(pageService);
 
+    mocks = [
+      pageService.getPageIds,
+      res.send
+    ];
+
   });
 
   beforeEach(() => {
-
-    pageService.getPageIds.reset();
-    res.send.reset();
 
     pageService.getPageIds.once().withExactArgs().resolves(pageIds);
     res.send.once().withExactArgs(pageIds);
@@ -33,8 +36,12 @@ describe("Page Controller", () => {
 
   afterEach(() => {
 
-    pageService.getPageIds.verify();
-    res.send.verify();
+    mocks.forEach(mock => {
+
+      mock.verify();
+      mock.reset();
+
+    });
     
   });
 

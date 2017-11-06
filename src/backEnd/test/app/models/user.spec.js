@@ -10,17 +10,17 @@ describe("User Model", () => {
 
   let userModel;
   let userSchema;
+  let mocks;
 
   before(() => {
 
     userModel = {};
     userSchema = {};
+    mocks = [ db.model ];
 
   });
 
   beforeEach(() => {
-
-    db.model.reset();
 
     db.model.once().withExactArgs("user", userSchema).returns(userModel);
     
@@ -28,7 +28,12 @@ describe("User Model", () => {
 
   afterEach(() => {
     
-    db.model.verify();
+    mocks.forEach(mock => {
+      
+      mock.verify();
+      mock.reset();
+
+    });
     
   });
 

@@ -10,17 +10,17 @@ describe("Page Model", () => {
 
   let pageModel;
   let pageSchema;
+  let mocks;
 
   before(() => {
 
     pageModel = {};
     pageSchema = {};
+    mocks = [ db.model ];
 
   });
 
   beforeEach(() => {
-
-    db.model.reset();
 
     db.model.once().withExactArgs("page", pageSchema).returns(pageModel);
     
@@ -28,7 +28,12 @@ describe("Page Model", () => {
 
   afterEach(() => {
     
-    db.model.verify();
+    mocks.forEach(mock => {
+      
+      mock.verify();
+      mock.reset();
+
+    });
     
   });
 

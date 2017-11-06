@@ -11,6 +11,7 @@ describe("Page Service", () => {
   let pageIds;
   let pages;
   let pageService;
+  let mocks;
 
   before(() => {
 
@@ -20,6 +21,7 @@ describe("Page Service", () => {
       return {id: pageId };
 
     });
+    mocks = [ Page.find ];
 
     pageService = new PageService(Page);
 
@@ -27,15 +29,18 @@ describe("Page Service", () => {
 
   beforeEach(() => {
 
-    Page.find.reset();
-
     Page.find.once().withExactArgs().resolves(pages);
     
   });
 
   afterEach(() => {
-    
-    Page.find.verify();
+
+    mocks.forEach(mock => {
+      
+      mock.verify();
+      mock.reset();
+
+    });
     
   });
 
