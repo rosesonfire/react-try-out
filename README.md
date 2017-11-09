@@ -33,6 +33,9 @@ All the necessary configurations like back end server, front end server, databas
 1. [package.json.README.md](package.json.README.md) - describes the dependencies and scripts in package.json.
 1. [README.md](README.md) - this file, contains necessary documentations.
 1. [src](src) - the folder that contains the development code. Edit files in this folder for development purpose.
+    1. [api](src/api) - contains api layer code.
+        1. [main](src/api/main) - the api layer code.
+        1. [test](src/api/test) - the api layer tests.
     1. [backEnd](src/backEnd) - contains the back end code.
         1. [main](src/backEnd/main) - the back end dev code.
             1. [app](src/backEnd/main/app) - contains the mvc application.
@@ -44,7 +47,7 @@ All the necessary configurations like back end server, front end server, databas
             1. [index.js](src/backEnd/main/index.js) - the code that is run by nodemon for starting the back end server.
             1. [ioc](src/backEnd/main/ioc) - contains inversion of control configurations.
             1. [lib](src/backEnd/main/lib) - contains customized libraries.
-        1. [test](src/backEnd/test) - the back end tests
+        1. [test](src/backEnd/test) - the back end tests.
     1. [config](src/config) - contains different configurations.
         1. [dev.conf.js](src/config/dev.conf.js) - configuration file for **devlopment mode**.
         1. [index.js](src/config/index.js) - configuration resolved based on **mode**.
@@ -71,7 +74,7 @@ All the necessary configurations like back end server, front end server, databas
             1. [scripts](src/frontEnd/main/scripts) - folder for storing custom js.
             1. [styles](src/frontEnd/main/styles) - folder for storing custom css.
             1. [webpack.config.js](src/frontEnd/main/webpack.config.js) - contains the webpack configurations.
-        1. [test](src/frontEnd/test) - the front end tests
+        1. [test](src/frontEnd/test) - the front end tests.
 1. [tsconfig.json](tsconfig.json) - type script configuration. Needed for decorators in vscode.
 ## Generated folders and files
 1. [.nyc_output](.nyc_output) - the folder in which the test coverage data is saved in.
