@@ -4,7 +4,7 @@
 ## First time installation
 `npm install`
 ## To start application
-`npm run start`
+`npm start`
 ## To test application
 `npm run test`<br />
 This will also generate html test coverage reports under [coverage](coverage) and open the reports on browser.
