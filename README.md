@@ -3,6 +3,8 @@
 [https://trello.com/b/5ugkxmBt/react-test](https://trello.com/b/5ugkxmBt/react-test)
 ## First time installation
 `npm install`
+## To migrate database
+`npm run migrate`
 ## To start application
 `npm start`
 ## To test application
